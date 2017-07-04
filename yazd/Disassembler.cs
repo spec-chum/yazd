@@ -13,17 +13,21 @@ namespace yazd
 	{
 		public static string FormatWord(ushort w)
 		{
-			var r = string.Format("{0:X4}h", w);
-			if (!char.IsDigit(r[0]))
-				r = "0" + r;
+            string r;
+            if (Program.decMode)
+                r = string.Format("{0}", w);
+            else
+                r = string.Format("${0:X4}", w);
 			return r;
 		}
 
 		public static string FormatByte(byte b)
 		{
-			var r = string.Format("{0:X2}h", b);
-			if (!char.IsDigit(r[0]))
-				r = "0" + r;
+            string r;
+            if (Program.decMode)
+                r = string.Format("{0}", b);
+            else
+                r = string.Format("${0:X2}", b);
 			return r;
 		}
 
@@ -200,7 +204,7 @@ namespace yazd
 								break;
 							}
 
-						default:
+                        default:
 							sb.Append(ch);
 							break;
 					}

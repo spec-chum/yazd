@@ -9,7 +9,9 @@ namespace yazd
 {
 	class Program
 	{
-		string _inputFile;
+        public static bool decMode = false;
+
+        string _inputFile;
 		string _outputFile;
 		int _baseAddr=0;
 		int _header=0;
@@ -21,7 +23,7 @@ namespace yazd
 		bool _markWordRefs = false;
 		bool _reloffs = false;
 		bool _htmlMode = false;
-		bool _autoOpen = false;
+		bool _autoOpen = false;        
 		List<int> _entryPoints = new List<int>();
 
 		int _addrSpaceStart;
@@ -31,12 +33,20 @@ namespace yazd
 		{
 			if (a < 0 || a > 0xFFFF)
 			{
-				throw new InvalidOperationException(string.Format("Address 0x{0:X} is out of range", a));
-			}
+                if(decMode)
+                    throw new InvalidOperationException(string.Format("Address {0} is out of range", a));
+                else
+                    throw new InvalidOperationException(string.Format("Address 0x{0:X} is out of range", a));
+            }
 
 			if (a < _addrSpaceStart || a > _addrSpaceEnd)
 			{
-				throw new InvalidOperationException(string.Format("Address 0x{0:X4} is out of range 0x{1:X4}-0x{2:X4}", a, _addrSpaceStart, _addrSpaceEnd));
+                if(decMode)
+                {
+                    throw new InvalidOperationException(string.Format("Address {0} is out of range {1}-{2}", a, _addrSpaceStart, _addrSpaceEnd));
+                }
+                else
+                    throw new InvalidOperationException(string.Format("Address 0x{0:X4} is out of range 0x{1:X4}-0x{2:X4}", a, _addrSpaceStart, _addrSpaceEnd));
 			}
 		}
 
@@ -153,6 +163,10 @@ namespace yazd
 						_autoOpen = true;
 						break;
 
+                    case "dec":
+                        decMode = true;
+                        break;
+
 					default:
 						throw new InvalidOperationException(string.Format("Unknown switch '{0}'", arg));
 				}
@@ -191,6 +205,7 @@ namespace yazd
 			System.Version v = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
 			Console.WriteLine("yazd v{0} - Yet Another Z80 Disassembler", v);
 			Console.WriteLine("Copyright (C) 2012 Topten Software. All Rights Reserved.");
+            Console.WriteLine("Copyright (C) 2017 Spec-Chum.  All Rights Reserved.");
 			Console.WriteLine("Disassembler engine based on http://z80ex.sourceforge.net/");
 
 			Console.WriteLine("");
@@ -212,6 +227,7 @@ namespace yazd
 			Console.WriteLine("  --html                 Generates a HTML file, with hyperlinked references");
 			Console.WriteLine("  --open                 Automatically opens the generated file with default associated app");
 			Console.WriteLine("  --lowercase|lc         Render in lowercase");
+            Console.WriteLine("  --dec                  Decimal mode");
 			Console.WriteLine("  --markwordrefs|mwr     Highlight with a comment literal word values (as they may be addresses)");
 			Console.WriteLine("  --reloffs              Show the offset of relative address mode instructions");
 			Console.WriteLine("  --header:N             Skip N header bytes at start of file");
@@ -437,7 +453,7 @@ namespace yazd
 				w = new TabbedTextWriter(targetWriter);
 				if (_lst)
 				{
-					((TabbedTextWriter)w).TabStops = new int[] { 32, 40, 48, 56, 64 };
+					((TabbedTextWriter)w).TabStops = new int[] { 32, 40, 48, 64, 72 };
 				}
 				else
 				{
@@ -510,12 +526,19 @@ namespace yazd
 
 				if (_lst)
 				{
-					w.Write("{0:X4}:", i.addr);
-					for (int j = 0; j < i.bytes; j++)
+                    if(decMode)
+                        w.Write("{0}:", i.addr);
+                    else
+                        w.Write("{0:X4}:", i.addr);
+
+                    for (int j = 0; j < i.bytes; j++)
 					{
 						var data = code[i.addr + j - _baseAddr + _header];
-						w.Write(" {0:X2}", data);
-					}
+                        if(decMode)
+                            w.Write(" {0}", data);
+                        else
+                            w.Write(" {0:X2}", data);
+                    }
 
 					w.Write(new string(' ', 3 * (6 - i.bytes)));
 					w.Write("\t ");
