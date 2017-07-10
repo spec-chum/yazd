@@ -217,7 +217,7 @@ namespace yazd
 				i.t_states2 += dasm.t_states2;
 
 				// Return continue address
-				if ((dasm.flags & OpCodeFlags.Continues) != 0)
+				if ((dasm.flags & (OpCodeFlags.Continues | OpCodeFlags.Restarts)) != 0)
 					i.next_addr_1 = addr;
 
 				// Return jump target address (if have it)
