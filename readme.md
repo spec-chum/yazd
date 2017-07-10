@@ -16,12 +16,6 @@ YAZD supports the following:
 * Data segments are listed 1 DB byte per line with ASCII character in comments.
 
 
-## Download
-
-Download here:
-
-* <https://raw.github.com/toptensoftware/yazd/master/yazd.zip>
-
 Requires:
 
 * Windows and .NET 4.0 or later
@@ -43,6 +37,7 @@ Options:
 	--html                 Generates a HTML file, with hyperlinked references
 	--open                 Automatically opens the generated file with default associated app
 	--lowercase|lc         Render in lowercase
+	--dec                  Decimal mode
 	--markwordrefs|mwr     Highlight with a comment literal word values (as they may be addresses)
 	--reloffs              Show the offset of relative address mode instructions
 	--header:N             Skip N header bytes at start of file
