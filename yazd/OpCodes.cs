@@ -1,59 +1,56 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 
 // Ported and modified from http://z80ex.sourceforge.net/
 
 namespace yazd
 {
-	[Flags]
-	public enum OpCodeFlags
-	{
-		Continues = 0x0001,	// Instruction may continue at the next address
-		Jumps = 0x0002,		// Instruction jumps to an absolute or relative address
-		Returns = 0x0004,	// Instruction returns
-		Restarts = 0x0008,	// Instruction jumps to restart address
-		RefAddr = 0x0010,	// References a literal address
-		PortRef = 0x0020,	// IN or OUT instruction
-		Call = 0x0040,
-	}
+    [Flags]
+    public enum OpCodeFlags
+    {
+        Continues = 0x0001, // Instruction may continue at the next address
+        Jumps = 0x0002,     // Instruction jumps to an absolute or relative address
+        Returns = 0x0004,   // Instruction returns
+        Restarts = 0x0008,  // Instruction jumps to restart address
+        RefAddr = 0x0010,   // References a literal address
+        PortRef = 0x0020,   // IN or OUT instruction
+        Call = 0x0040,
+    }
 
-	public class OpCode
-	{
-		public string mnemonic;
-		public int t_states;
-		public int t_states2;
-		public OpCodeFlags flags;
+    public class OpCode
+    {
+        public string mnemonic;
+        public int t_states;
+        public int t_states2;
+        public OpCodeFlags flags;
 
-		public OpCode(string mnemonic, int t_states, int t_states2, OpCodeFlags flags = OpCodeFlags.Continues)
-		{
-			this.mnemonic = mnemonic;
-			this.t_states = t_states;
-			this.t_states2 = t_states2;
-			this.flags = flags;
+        public OpCode(string mnemonic, int t_states, int t_states2, OpCodeFlags flags = OpCodeFlags.Continues)
+        {
+            this.mnemonic = mnemonic;
+            this.t_states = t_states;
+            this.t_states2 = t_states2;
+            this.flags = flags;
 
-			if (mnemonic != null)
-			{
-				if (mnemonic.IndexOf("(@)") >= 0)
-					this.flags |= OpCodeFlags.RefAddr;
+            if (mnemonic != null)
+            {
+                if (mnemonic.IndexOf("(@)") >= 0)
+                    this.flags |= OpCodeFlags.RefAddr;
 
-				if (mnemonic.StartsWith("IN ") || mnemonic.StartsWith("OUT "))
-					this.flags |= OpCodeFlags.PortRef;
+                if (mnemonic.StartsWith("IN ") || mnemonic.StartsWith("OUT "))
+                    this.flags |= OpCodeFlags.PortRef;
 
-				if (mnemonic.StartsWith("CALL ") || mnemonic.StartsWith("OUT "))
-					this.flags |= OpCodeFlags.Call;
-			}
-		}
-	}
+                if (mnemonic.StartsWith("CALL ") || mnemonic.StartsWith("OUT "))
+                    this.flags |= OpCodeFlags.Call;
+            }
+        }
+    }
 
-	public static class OpCodes
-	{
-		/**/
-		public static OpCode[] dasm_base = new OpCode[] 
-		{
-			new OpCode( "NOP"               ,  4 ,  0 ), /* 00 */
+    public static class OpCodes
+    {
+        /**/
+
+        public static OpCode[] dasm_base = new OpCode[]
+        {
+            new OpCode( "NOP"               ,  4 ,  0 ), /* 00 */
 			new OpCode( "LD BC,@"           , 10 ,  0 ), /* 01 */
 			new OpCode( "LD (BC),A"         ,  7 ,  0 ), /* 02 */
 			new OpCode( "INC BC"            ,  6 ,  0 ), /* 03 */
@@ -311,11 +308,11 @@ namespace yazd
 			new OpCode( "RST $38"           , 11 ,  0 , OpCodeFlags.Restarts), /* FF */
 		};
 
+        /**/
 
-		/**/
-		public static OpCode[] dasm_cb = new OpCode[]
-		{
-			new OpCode( "RLC B"             ,  8 ,  0 ), /* 00 */
+        public static OpCode[] dasm_cb = new OpCode[]
+        {
+            new OpCode( "RLC B"             ,  8 ,  0 ), /* 00 */
 			new OpCode( "RLC C"             ,  8 ,  0 ), /* 01 */
 			new OpCode( "RLC D"             ,  8 ,  0 ), /* 02 */
 			new OpCode( "RLC E"             ,  8 ,  0 ), /* 03 */
@@ -571,14 +568,13 @@ namespace yazd
 			new OpCode( "SET 7,L"           ,  8 ,  0 ), /* FD */
 			new OpCode( "SET 7,(HL)"        , 15 ,  0 ), /* FE */
 			new OpCode( "SET 7,A"           ,  8 ,  0 ), /* FF */
-
 		};
 
+        /**/
 
-		/**/
-		public static OpCode[] dasm_ed = new OpCode[]
-		{
-			new OpCode( null                ,  0 ,  0 ), /* 00 */
+        public static OpCode[] dasm_ed = new OpCode[]
+        {
+            new OpCode( null                ,  0 ,  0 ), /* 00 */
 			new OpCode( null                ,  0 ,  0 ), /* 01 */
 			new OpCode( null                ,  0 ,  0 ), /* 02 */
 			new OpCode( null                ,  0 ,  0 ), /* 03 */
@@ -836,11 +832,11 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* FF */
 		};
 
+        /**/
 
-		/**/
-		public static OpCode[] dasm_dd = new OpCode[]
-		{
-			new OpCode( null                ,  0 ,  0 ), /* 00 */
+        public static OpCode[] dasm_dd = new OpCode[]
+        {
+            new OpCode( null                ,  0 ,  0 ), /* 00 */
 			new OpCode( null                ,  0 ,  0 ), /* 01 */
 			new OpCode( null                ,  0 ,  0 ), /* 02 */
 			new OpCode( null                ,  0 ,  0 ), /* 03 */
@@ -1098,11 +1094,11 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* FF */
 		};
 
+        /**/
 
-		/**/
-		public static OpCode[] dasm_fd = new OpCode[]
-		{
-			new OpCode( null                ,  0 ,  0 ), /* 00 */
+        public static OpCode[] dasm_fd = new OpCode[]
+        {
+            new OpCode( null                ,  0 ,  0 ), /* 00 */
 			new OpCode( null                ,  0 ,  0 ), /* 01 */
 			new OpCode( null                ,  0 ,  0 ), /* 02 */
 			new OpCode( null                ,  0 ,  0 ), /* 03 */
@@ -1360,11 +1356,11 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* FF */
 		};
 
+        /**/
 
-		/**/
-		public static OpCode[] dasm_ddcb = new OpCode[] 
-		{
-			new OpCode( "LD B,RLC (IX+$)"   , 23 ,  0 ), /* 00 */
+        public static OpCode[] dasm_ddcb = new OpCode[]
+        {
+            new OpCode( "LD B,RLC (IX+$)"   , 23 ,  0 ), /* 00 */
 			new OpCode( "LD C,RLC (IX+$)"   , 23 ,  0 ), /* 01 */
 			new OpCode( "LD D,RLC (IX+$)"   , 23 ,  0 ), /* 02 */
 			new OpCode( "LD E,RLC (IX+$)"   , 23 ,  0 ), /* 03 */
@@ -1622,11 +1618,11 @@ namespace yazd
 			new OpCode( "LD A,SET 7,(IX+$)" , 23 ,  0 ), /* FF */
 		};
 
+        /**/
 
-		/**/
-		public static OpCode[] dasm_fdcb = new OpCode[]
-		{
-			new OpCode( "LD B,RLC (IY+$)"   , 23 ,  0 ), /* 00 */
+        public static OpCode[] dasm_fdcb = new OpCode[]
+        {
+            new OpCode( "LD B,RLC (IY+$)"   , 23 ,  0 ), /* 00 */
 			new OpCode( "LD C,RLC (IY+$)"   , 23 ,  0 ), /* 01 */
 			new OpCode( "LD D,RLC (IY+$)"   , 23 ,  0 ), /* 02 */
 			new OpCode( "LD E,RLC (IY+$)"   , 23 ,  0 ), /* 03 */
@@ -1882,7 +1878,6 @@ namespace yazd
 			new OpCode( "LD L,SET 7,(IY+$)" , 23 ,  0 ), /* FD */
 			new OpCode( "SET 7,(IY+$)"      , 23 ,  0 ), /* FE */
 			new OpCode( "LD A,SET 7,(IY+$)" , 23 ,  0 ), /* FF */
-
 		};
-	}
+    }
 }
