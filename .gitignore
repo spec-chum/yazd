@@ -12,3 +12,8 @@ Debug
 *.ncb
 *.vshost.exe
 *.vshost.exe.manifest
+/.vs/slnx.sqlite
+/.vs/ProjectSettings.json
+/.vs/slnx.sqlite
+/.vs/ProjectSettings.json
+/.vs/VSWorkspaceState.json
