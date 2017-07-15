@@ -293,8 +293,17 @@ namespace yazd
 			Disassembler.HtmlMode = _htmlMode;
 			Disassembler.ShowRelativeOffsets = _reloffs;
 
-			// Disassemble
-			var instructions = new Dictionary<int, Instruction>();
+            // Set up decimal RST if selected
+            if(decMode)
+            {
+                for(int i = 199; i <= 255; i += 8)
+                {
+                    OpCodes.dasm_base[i].mnemonic = "RST " + (i - 199).ToString();
+                }
+            }
+            
+            // Disassemble
+            var instructions = new Dictionary<int, Instruction>();
 			if (_entryPoints.Count > 0)
 			{
 				var pendingCodePaths = new List<int>();
@@ -549,14 +558,15 @@ namespace yazd
 				if (i.entryPoint || i.referencedFrom != null || (prev != null && !prev.next_addr_1.HasValue))
 				{
 					label = Disassembler.FormatAddr(i.addr, false);
-					label += ":";
+					label += ":\n";
 				}
 
-				// Write the disassembled instruction
-				w.Write("{0}\t{1}", label, i.Asm.Replace(" ", "\t"));
+                // Write the disassembled instruction
+                //w.Write("{0}\t{1}", label, i.Asm.Replace(" ", "\t"));
+                w.Write("{0}\t{1}", label, i.Asm.Replace(" ", "\t").Replace(",", ", "));
 
-				// Write out an optional comment
-				if (i.Comment != null)
+                // Write out an optional comment
+                if (i.Comment != null)
 					w.Write("\t; {0}", i.Comment);
 
 				if (_htmlMode)

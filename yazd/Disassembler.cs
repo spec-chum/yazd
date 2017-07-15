@@ -162,7 +162,7 @@ namespace yazd
 								break;
 							}
 
-						case '$':
+						// case '$':
 						case '%':
 							{
 								if (!have_disp)
