@@ -59,7 +59,12 @@ namespace yazd
             Instruction i = p.firstInstruction;
             List<int> dependants = new List<int>();
             while (true)
-            {
+            {   
+                // Setting an --entry to an invalid opcode raises a null reference exception
+                // so make sure we actually have a valid instruction
+                if (i.opCode == null)
+                    break;
+
                 // Update the length of this proc
                 p.lengthInBytes = i.addr - p.firstInstruction.addr + i.bytes;
 
