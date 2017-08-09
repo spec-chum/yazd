@@ -41,9 +41,7 @@ namespace yazd
             if (a < _addrSpaceStart || a > _addrSpaceEnd)
             {
                 if (decMode)
-                {
                     throw new InvalidOperationException(string.Format("Address {0} is out of range {1}-{2}", a, _addrSpaceStart, _addrSpaceEnd));
-                }
                 else
                     throw new InvalidOperationException(string.Format("Address 0x{0:X4} is out of range 0x{1:X4}-0x{2:X4}", a, _addrSpaceStart, _addrSpaceEnd));
             }
@@ -61,20 +59,20 @@ namespace yazd
             if (arg.StartsWith("@"))
             {
                 // Get the fully qualified response file name
-                string strResponseFile = System.IO.Path.GetFullPath(arg.Substring(1));
+                string strResponseFile = Path.GetFullPath(arg.Substring(1));
 
                 // Load and parse the response file
-                var args = Utils.ParseCommandLine(System.IO.File.ReadAllText(strResponseFile));
+                var args = Utils.ParseCommandLine(File.ReadAllText(strResponseFile));
 
                 // Set the current directory
-                string OldCurrentDir = System.IO.Directory.GetCurrentDirectory();
-                System.IO.Directory.SetCurrentDirectory(System.IO.Path.GetDirectoryName(strResponseFile));
+                string OldCurrentDir = Directory.GetCurrentDirectory();
+                Directory.SetCurrentDirectory(Path.GetDirectoryName(strResponseFile));
 
                 // Load the file
                 bool bRetv = ProcessArgs(args);
 
                 // Restore current directory
-                System.IO.Directory.SetCurrentDirectory(OldCurrentDir);
+                Directory.SetCurrentDirectory(OldCurrentDir);
 
                 return bRetv;
             }
@@ -268,7 +266,7 @@ namespace yazd
             }
 
             // Open input file
-            var code = System.IO.File.ReadAllBytes(_inputFile);
+            var code = File.ReadAllBytes(_inputFile);
 
             // Work out the available address space
             _addrSpaceStart = _baseAddr;
