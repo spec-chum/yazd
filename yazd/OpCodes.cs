@@ -14,6 +14,7 @@ namespace yazd
         RefAddr = 0x0010,   // References a literal address
         PortRef = 0x0020,   // IN or OUT instruction
         Call = 0x0040,
+        Next = 0x0080,      // ZX Spectrum Next extended instruction
     }
 
     public class OpCode
@@ -38,7 +39,7 @@ namespace yazd
                 if (mnemonic.StartsWith("IN ") || mnemonic.StartsWith("OUT "))
                     this.flags |= OpCodeFlags.PortRef;
 
-                if (mnemonic.StartsWith("CALL ") || mnemonic.StartsWith("OUT "))
+                if (mnemonic.StartsWith("CALL ") || mnemonic.StartsWith("RST "))
                     this.flags |= OpCodeFlags.Call;
             }
         }
@@ -606,14 +607,14 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 1D */
 			new OpCode( null                ,  0 ,  0 ), /* 1E */
 			new OpCode( null                ,  0 ,  0 ), /* 1F */
-			new OpCode( null                ,  0 ,  0 ), /* 20 */
-			new OpCode( null                ,  0 ,  0 ), /* 21 */
-			new OpCode( null                ,  0 ,  0 ), /* 22 */
-			new OpCode( null                ,  0 ,  0 ), /* 23 */
-			new OpCode( null                ,  0 ,  0 ), /* 24 */
-			new OpCode( null                ,  0 ,  0 ), /* 25 */
-			new OpCode( null                ,  0 ,  0 ), /* 26 */
-			new OpCode( null                ,  0 ,  0 ), /* 27 */
+			new OpCode( "LD A32,DEHL"       ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 20 */
+			new OpCode( "LD DEHL,A32"       ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 21 */
+			new OpCode( "EX A32,DEHL"       ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 22 */
+			new OpCode( "SWAPNIB"           ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 23 */
+			new OpCode( "MIRROR A"          ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 24 */
+			new OpCode( "LD HL,SP"          ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 25 */
+			new OpCode( "MIRROR DE"         ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 26 */
+			new OpCode( "TEST #"            ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 27 */
 			new OpCode( null                ,  0 ,  0 ), /* 28 */
 			new OpCode( null                ,  0 ,  0 ), /* 29 */
 			new OpCode( null                ,  0 ,  0 ), /* 2A */
@@ -622,20 +623,20 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 2D */
 			new OpCode( null                ,  0 ,  0 ), /* 2E */
 			new OpCode( null                ,  0 ,  0 ), /* 2F */
-			new OpCode( null                ,  0 ,  0 ), /* 30 */
-			new OpCode( null                ,  0 ,  0 ), /* 31 */
-			new OpCode( null                ,  0 ,  0 ), /* 32 */
-			new OpCode( null                ,  0 ,  0 ), /* 33 */
-			new OpCode( null                ,  0 ,  0 ), /* 34 */
-			new OpCode( null                ,  0 ,  0 ), /* 35 */
-			new OpCode( null                ,  0 ,  0 ), /* 36 */
-			new OpCode( null                ,  0 ,  0 ), /* 37 */
-			new OpCode( null                ,  0 ,  0 ), /* 38 */
-			new OpCode( null                ,  0 ,  0 ), /* 39 */
-			new OpCode( null                ,  0 ,  0 ), /* 3A */
-			new OpCode( null                ,  0 ,  0 ), /* 3B */
-			new OpCode( null                ,  0 ,  0 ), /* 3C */
-			new OpCode( null                ,  0 ,  0 ), /* 3D */
+			new OpCode( "MUL"               ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 30 */
+			new OpCode( "ADD HL,A"          ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 31 */
+			new OpCode( "ADD DE,A"          ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 32 */
+			new OpCode( "ADD BC,A"          ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 33 */
+			new OpCode( "ADD HL,@"          ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 34 */
+			new OpCode( "ADD DE,@"          ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 35 */
+			new OpCode( "ADD BC,@"          ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 36 */
+			new OpCode( "INC DEHL"          ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 37 */
+			new OpCode( "DEC DEHL"          ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 38 */
+			new OpCode( "ADD DEHL,A"        ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 39 */
+			new OpCode( "ADD DEHL,BC"       ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 3A */
+			new OpCode( "ADD DEHL,@"        ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 3B */
+			new OpCode( "SUB DEHL,A"        ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 3C */
+			new OpCode( "SUB DEHL,BC"       ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 3D */
 			new OpCode( null                ,  0 ,  0 ), /* 3E */
 			new OpCode( null                ,  0 ,  0 ), /* 3F */
 			new OpCode( "IN B,(C)"          , 12 ,  0 ), /* 40 */
@@ -712,18 +713,18 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 87 */
 			new OpCode( null                ,  0 ,  0 ), /* 88 */
 			new OpCode( null                ,  0 ,  0 ), /* 89 */
-			new OpCode( null                ,  0 ,  0 ), /* 8A */
-			new OpCode( null                ,  0 ,  0 ), /* 8B */
+			new OpCode( "PUSH @"            ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 8A */
+			new OpCode( "POPX"              ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 8B */
 			new OpCode( null                ,  0 ,  0 ), /* 8C */
 			new OpCode( null                ,  0 ,  0 ), /* 8D */
 			new OpCode( null                ,  0 ,  0 ), /* 8E */
 			new OpCode( null                ,  0 ,  0 ), /* 8F */
-			new OpCode( null                ,  0 ,  0 ), /* 90 */
-			new OpCode( null                ,  0 ,  0 ), /* 91 */
-			new OpCode( null                ,  0 ,  0 ), /* 92 */
-			new OpCode( null                ,  0 ,  0 ), /* 93 */
-			new OpCode( null                ,  0 ,  0 ), /* 94 */
-			new OpCode( null                ,  0 ,  0 ), /* 95 */
+			new OpCode( "OUTINB"            ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 90 */
+			new OpCode( "NEXTREG #,#"       ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 91 */
+			new OpCode( "NEXTREG #,A"       ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 92 */
+			new OpCode( "PIXELDN"           ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 93 */
+			new OpCode( "PIXELAD"           ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 94 */
+			new OpCode( "SETAE"             ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 95 */
 			new OpCode( null                ,  0 ,  0 ), /* 96 */
 			new OpCode( null                ,  0 ,  0 ), /* 97 */
 			new OpCode( null                ,  0 ,  0 ), /* 98 */
@@ -738,7 +739,7 @@ namespace yazd
 			new OpCode( "CPI"               , 16 ,  0 ), /* A1 */
 			new OpCode( "INI"               , 16 ,  0 ), /* A2 */
 			new OpCode( "OUTI"              , 16 ,  0 ), /* A3 */
-			new OpCode( null                ,  0 ,  0 ), /* A4 */
+			new OpCode( "LDIX"              ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* A4 */
 			new OpCode( null                ,  0 ,  0 ), /* A5 */
 			new OpCode( null                ,  0 ,  0 ), /* A6 */
 			new OpCode( null                ,  0 ,  0 ), /* A7 */
@@ -746,7 +747,7 @@ namespace yazd
 			new OpCode( "CPD"               , 16 ,  0 ), /* A9 */
 			new OpCode( "IND"               , 16 ,  0 ), /* AA */
 			new OpCode( "OUTD"              , 16 ,  0 ), /* AB */
-			new OpCode( null                ,  0 ,  0 ), /* AC */
+			new OpCode( "LDDX"              ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* AC */
 			new OpCode( null                ,  0 ,  0 ), /* AD */
 			new OpCode( null                ,  0 ,  0 ), /* AE */
 			new OpCode( null                ,  0 ,  0 ), /* AF */
@@ -754,15 +755,15 @@ namespace yazd
 			new OpCode( "CPIR"              , 16 , 21 ), /* B1 */
 			new OpCode( "INIR"              , 16 , 21 ), /* B2 */
 			new OpCode( "OTIR"              , 16 , 21 ), /* B3 */
-			new OpCode( null                ,  0 ,  0 ), /* B4 */
-			new OpCode( null                ,  0 ,  0 ), /* B5 */
-			new OpCode( null                ,  0 ,  0 ), /* B6 */
-			new OpCode( null                ,  0 ,  0 ), /* B7 */
+			new OpCode( "LDIRX"             ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* B4 */
+			new OpCode( "FILLDE"            ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* B5 */
+			new OpCode( "LDIRSCALE"         ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* B6 */
+			new OpCode( "LDPIRX"            ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* B7 */
 			new OpCode( "LDDR"              , 16 , 21 ), /* B8 */
 			new OpCode( "CPDR"              , 16 , 21 ), /* B9 */
 			new OpCode( "INDR"              , 16 , 21 ), /* BA */
 			new OpCode( "OTDR"              , 16 , 21 ), /* BB */
-			new OpCode( null                ,  0 ,  0 ), /* BC */
+			new OpCode( "LDDRX"             ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* BC */
 			new OpCode( null                ,  0 ,  0 ), /* BD */
 			new OpCode( null                ,  0 ,  0 ), /* BE */
 			new OpCode( null                ,  0 ,  0 ), /* BF */
