@@ -157,7 +157,7 @@ namespace yazd
                                 break;
                             }
 
-                        // case '$':
+                        case '?':
                         case '%':
                             {
                                 if (!have_disp)
@@ -176,7 +176,7 @@ namespace yazd
                                     }
                                 }
 
-                                if (ch == '$')
+                                if (ch == '?')
                                     sb.Append(FormatByte((byte)disp));
                                 else
                                 {
