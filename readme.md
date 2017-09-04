@@ -5,6 +5,7 @@ YAZD is a simple command line disassembler for Z80 binary code files.  It's base
 YAZD supports the following:
 
 * Disassembly of all Z80 instructions, as supported by z80ex.
+* **NEW**  Supports all currently known ZX Spectrum Next CPU opcodes (more to come)
 * Code path analysis can usually tell the difference between code and data.
 * Generates labelled assembly language listings.
 * Can also generate more detailed listing files with byte code and assembly source.
