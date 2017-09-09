@@ -177,7 +177,19 @@ namespace yazd
                                 }
 
                                 if (ch == '?')
+                                {
+                                    if (disp < 0)
+                                    {
+                                        sb.Append('-');
+                                        disp = -disp;
+                                    }
+                                    else
+                                    {
+                                        sb.Append('+');
+                                    }
+
                                     sb.Append(FormatByte((byte)disp));
+                                }
                                 else
                                 {
                                     jump_addr = (ushort)(addr + disp);

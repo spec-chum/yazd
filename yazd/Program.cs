@@ -551,7 +551,7 @@ namespace yazd
                 if (i.entryPoint || i.referencedFrom != null || (prev != null && !prev.next_addr_1.HasValue))
                 {
                     label = Disassembler.FormatAddr(i.addr, false);
-                    label += ":\n";
+                    label += ":";
                 }
 
                 // Write the disassembled instruction

@@ -889,9 +889,9 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 31 */
 			new OpCode( null                ,  0 ,  0 ), /* 32 */
 			new OpCode( null                ,  0 ,  0 ), /* 33 */
-			new OpCode( "INC (IX+?)"        , 23 ,  0 ), /* 34 */
-			new OpCode( "DEC (IX+?)"        , 23 ,  0 ), /* 35 */
-			new OpCode( "LD (IX+?),#"       , 19 ,  0 ), /* 36 */
+			new OpCode( "INC (IX?)"        , 23 ,  0 ), /* 34 */
+			new OpCode( "DEC (IX?)"        , 23 ,  0 ), /* 35 */
+			new OpCode( "LD (IX?),#"       , 19 ,  0 ), /* 36 */
 			new OpCode( null                ,  0 ,  0 ), /* 37 */
 			new OpCode( null                ,  0 ,  0 ), /* 38 */
 			new OpCode( "ADD IX,SP"         , 15 ,  0 ), /* 39 */
@@ -907,7 +907,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 43 */
 			new OpCode( "LD B,IXH"          ,  8 ,  0 ), /* 44 */
 			new OpCode( "LD B,IXL"          ,  8 ,  0 ), /* 45 */
-			new OpCode( "LD B,(IX+?)"       , 19 ,  0 ), /* 46 */
+			new OpCode( "LD B,(IX?)"       , 19 ,  0 ), /* 46 */
 			new OpCode( null                ,  0 ,  0 ), /* 47 */
 			new OpCode( null                ,  0 ,  0 ), /* 48 */
 			new OpCode( null                ,  0 ,  0 ), /* 49 */
@@ -915,7 +915,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 4B */
 			new OpCode( "LD C,IXH"          ,  8 ,  0 ), /* 4C */
 			new OpCode( "LD C,IXL"          ,  8 ,  0 ), /* 4D */
-			new OpCode( "LD C,(IX+?)"       , 19 ,  0 ), /* 4E */
+			new OpCode( "LD C,(IX?)"       , 19 ,  0 ), /* 4E */
 			new OpCode( null                ,  0 ,  0 ), /* 4F */
 			new OpCode( null                ,  0 ,  0 ), /* 50 */
 			new OpCode( null                ,  0 ,  0 ), /* 51 */
@@ -923,7 +923,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 53 */
 			new OpCode( "LD D,IXH"          ,  8 ,  0 ), /* 54 */
 			new OpCode( "LD D,IXL"          ,  8 ,  0 ), /* 55 */
-			new OpCode( "LD D,(IX+?)"       , 19 ,  0 ), /* 56 */
+			new OpCode( "LD D,(IX?)"       , 19 ,  0 ), /* 56 */
 			new OpCode( null                ,  0 ,  0 ), /* 57 */
 			new OpCode( null                ,  0 ,  0 ), /* 58 */
 			new OpCode( null                ,  0 ,  0 ), /* 59 */
@@ -931,7 +931,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 5B */
 			new OpCode( "LD E,IXH"          ,  8 ,  0 ), /* 5C */
 			new OpCode( "LD E,IXL"          ,  8 ,  0 ), /* 5D */
-			new OpCode( "LD E,(IX+?)"       , 19 ,  0 ), /* 5E */
+			new OpCode( "LD E,(IX?)"       , 19 ,  0 ), /* 5E */
 			new OpCode( null                ,  0 ,  0 ), /* 5F */
 			new OpCode( "LD IXH,B"          ,  8 ,  0 ), /* 60 */
 			new OpCode( "LD IXH,C"          ,  8 ,  0 ), /* 61 */
@@ -939,7 +939,7 @@ namespace yazd
 			new OpCode( "LD IXH,E"          ,  8 ,  0 ), /* 63 */
 			new OpCode( "LD IXH,IXH"        ,  8 ,  0 ), /* 64 */
 			new OpCode( "LD IXH,IXL"        ,  8 ,  0 ), /* 65 */
-			new OpCode( "LD H,(IX+?)"       , 19 ,  0 ), /* 66 */
+			new OpCode( "LD H,(IX?)"       , 19 ,  0 ), /* 66 */
 			new OpCode( "LD IXH,A"          ,  8 ,  0 ), /* 67 */
 			new OpCode( "LD IXL,B"          ,  8 ,  0 ), /* 68 */
 			new OpCode( "LD IXL,C"          ,  8 ,  0 ), /* 69 */
@@ -947,23 +947,23 @@ namespace yazd
 			new OpCode( "LD IXL,E"          ,  8 ,  0 ), /* 6B */
 			new OpCode( "LD IXL,IXH"        ,  8 ,  0 ), /* 6C */
 			new OpCode( "LD IXL,IXL"        ,  8 ,  0 ), /* 6D */
-			new OpCode( "LD L,(IX+?)"       , 19 ,  0 ), /* 6E */
+			new OpCode( "LD L,(IX?)"       , 19 ,  0 ), /* 6E */
 			new OpCode( "LD IXL,A"          ,  8 ,  0 ), /* 6F */
-			new OpCode( "LD (IX+?),B"       , 19 ,  0 ), /* 70 */
-			new OpCode( "LD (IX+?),C"       , 19 ,  0 ), /* 71 */
-			new OpCode( "LD (IX+?),D"       , 19 ,  0 ), /* 72 */
-			new OpCode( "LD (IX+?),E"       , 19 ,  0 ), /* 73 */
-			new OpCode( "LD (IX+?),H"       , 19 ,  0 ), /* 74 */
-			new OpCode( "LD (IX+?),L"       , 19 ,  0 ), /* 75 */
+			new OpCode( "LD (IX?),B"       , 19 ,  0 ), /* 70 */
+			new OpCode( "LD (IX?),C"       , 19 ,  0 ), /* 71 */
+			new OpCode( "LD (IX?),D"       , 19 ,  0 ), /* 72 */
+			new OpCode( "LD (IX?),E"       , 19 ,  0 ), /* 73 */
+			new OpCode( "LD (IX?),H"       , 19 ,  0 ), /* 74 */
+			new OpCode( "LD (IX?),L"       , 19 ,  0 ), /* 75 */
 			new OpCode( null                ,  0 ,  0 ), /* 76 */
-			new OpCode( "LD (IX+?),A"       , 19 ,  0 ), /* 77 */
+			new OpCode( "LD (IX?),A"       , 19 ,  0 ), /* 77 */
 			new OpCode( null                ,  0 ,  0 ), /* 78 */
 			new OpCode( null                ,  0 ,  0 ), /* 79 */
 			new OpCode( null                ,  0 ,  0 ), /* 7A */
 			new OpCode( null                ,  0 ,  0 ), /* 7B */
 			new OpCode( "LD A,IXH"          ,  8 ,  0 ), /* 7C */
 			new OpCode( "LD A,IXL"          ,  8 ,  0 ), /* 7D */
-			new OpCode( "LD A,(IX+?)"       , 19 ,  0 ), /* 7E */
+			new OpCode( "LD A,(IX?)"       , 19 ,  0 ), /* 7E */
 			new OpCode( null                ,  0 ,  0 ), /* 7F */
 			new OpCode( null                ,  0 ,  0 ), /* 80 */
 			new OpCode( null                ,  0 ,  0 ), /* 81 */
@@ -971,7 +971,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 83 */
 			new OpCode( "ADD A,IXH"         ,  8 ,  0 ), /* 84 */
 			new OpCode( "ADD A,IXL"         ,  8 ,  0 ), /* 85 */
-			new OpCode( "ADD A,(IX+?)"      , 19 ,  0 ), /* 86 */
+			new OpCode( "ADD A,(IX?)"      , 19 ,  0 ), /* 86 */
 			new OpCode( null                ,  0 ,  0 ), /* 87 */
 			new OpCode( null                ,  0 ,  0 ), /* 88 */
 			new OpCode( null                ,  0 ,  0 ), /* 89 */
@@ -979,7 +979,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 8B */
 			new OpCode( "ADC A,IXH"         ,  8 ,  0 ), /* 8C */
 			new OpCode( "ADC A,IXL"         ,  8 ,  0 ), /* 8D */
-			new OpCode( "ADC A,(IX+?)"      , 19 ,  0 ), /* 8E */
+			new OpCode( "ADC A,(IX?)"      , 19 ,  0 ), /* 8E */
 			new OpCode( null                ,  0 ,  0 ), /* 8F */
 			new OpCode( null                ,  0 ,  0 ), /* 90 */
 			new OpCode( null                ,  0 ,  0 ), /* 91 */
@@ -987,7 +987,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 93 */
 			new OpCode( "SUB IXH"           ,  8 ,  0 ), /* 94 */
 			new OpCode( "SUB IXL"           ,  8 ,  0 ), /* 95 */
-			new OpCode( "SUB (IX+?)"        , 19 ,  0 ), /* 96 */
+			new OpCode( "SUB (IX?)"        , 19 ,  0 ), /* 96 */
 			new OpCode( null                ,  0 ,  0 ), /* 97 */
 			new OpCode( null                ,  0 ,  0 ), /* 98 */
 			new OpCode( null                ,  0 ,  0 ), /* 99 */
@@ -995,7 +995,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 9B */
 			new OpCode( "SBC A,IXH"         ,  8 ,  0 ), /* 9C */
 			new OpCode( "SBC A,IXL"         ,  8 ,  0 ), /* 9D */
-			new OpCode( "SBC A,(IX+?)"      , 19 ,  0 ), /* 9E */
+			new OpCode( "SBC A,(IX?)"      , 19 ,  0 ), /* 9E */
 			new OpCode( null                ,  0 ,  0 ), /* 9F */
 			new OpCode( null                ,  0 ,  0 ), /* A0 */
 			new OpCode( null                ,  0 ,  0 ), /* A1 */
@@ -1003,7 +1003,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* A3 */
 			new OpCode( "AND IXH"           ,  8 ,  0 ), /* A4 */
 			new OpCode( "AND IXL"           ,  8 ,  0 ), /* A5 */
-			new OpCode( "AND (IX+?)"        , 19 ,  0 ), /* A6 */
+			new OpCode( "AND (IX?)"        , 19 ,  0 ), /* A6 */
 			new OpCode( null                ,  0 ,  0 ), /* A7 */
 			new OpCode( null                ,  0 ,  0 ), /* A8 */
 			new OpCode( null                ,  0 ,  0 ), /* A9 */
@@ -1011,7 +1011,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* AB */
 			new OpCode( "XOR IXH"           ,  8 ,  0 ), /* AC */
 			new OpCode( "XOR IXL"           ,  8 ,  0 ), /* AD */
-			new OpCode( "XOR (IX+?)"        , 19 ,  0 ), /* AE */
+			new OpCode( "XOR (IX?)"        , 19 ,  0 ), /* AE */
 			new OpCode( null                ,  0 ,  0 ), /* AF */
 			new OpCode( null                ,  0 ,  0 ), /* B0 */
 			new OpCode( null                ,  0 ,  0 ), /* B1 */
@@ -1019,7 +1019,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* B3 */
 			new OpCode( "OR IXH"            ,  8 ,  0 ), /* B4 */
 			new OpCode( "OR IXL"            ,  8 ,  0 ), /* B5 */
-			new OpCode( "OR (IX+?)"         , 19 ,  0 ), /* B6 */
+			new OpCode( "OR (IX?)"         , 19 ,  0 ), /* B6 */
 			new OpCode( null                ,  0 ,  0 ), /* B7 */
 			new OpCode( null                ,  0 ,  0 ), /* B8 */
 			new OpCode( null                ,  0 ,  0 ), /* B9 */
@@ -1027,7 +1027,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* BB */
 			new OpCode( "CP IXH"            ,  8 ,  0 ), /* BC */
 			new OpCode( "CP IXL"            ,  8 ,  0 ), /* BD */
-			new OpCode( "CP (IX+?)"         , 19 ,  0 ), /* BE */
+			new OpCode( "CP (IX?)"         , 19 ,  0 ), /* BE */
 			new OpCode( null                ,  0 ,  0 ), /* BF */
 			new OpCode( null                ,  0 ,  0 ), /* C0 */
 			new OpCode( null                ,  0 ,  0 ), /* C1 */
@@ -1151,9 +1151,9 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 31 */
 			new OpCode( null                ,  0 ,  0 ), /* 32 */
 			new OpCode( null                ,  0 ,  0 ), /* 33 */
-			new OpCode( "INC (IY+?)"        , 23 ,  0 ), /* 34 */
-			new OpCode( "DEC (IY+?)"        , 23 ,  0 ), /* 35 */
-			new OpCode( "LD (IY+?),#"       , 19 ,  0 ), /* 36 */
+			new OpCode( "INC (IY?)"        , 23 ,  0 ), /* 34 */
+			new OpCode( "DEC (IY?)"        , 23 ,  0 ), /* 35 */
+			new OpCode( "LD (IY?),#"       , 19 ,  0 ), /* 36 */
 			new OpCode( null                ,  0 ,  0 ), /* 37 */
 			new OpCode( null                ,  0 ,  0 ), /* 38 */
 			new OpCode( "ADD IY,SP"         , 15 ,  0 ), /* 39 */
@@ -1169,7 +1169,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 43 */
 			new OpCode( "LD B,IYH"          ,  8 ,  0 ), /* 44 */
 			new OpCode( "LD B,IYL"          ,  8 ,  0 ), /* 45 */
-			new OpCode( "LD B,(IY+?)"       , 19 ,  0 ), /* 46 */
+			new OpCode( "LD B,(IY?)"       , 19 ,  0 ), /* 46 */
 			new OpCode( null                ,  0 ,  0 ), /* 47 */
 			new OpCode( null                ,  0 ,  0 ), /* 48 */
 			new OpCode( null                ,  0 ,  0 ), /* 49 */
@@ -1177,7 +1177,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 4B */
 			new OpCode( "LD C,IYH"          ,  8 ,  0 ), /* 4C */
 			new OpCode( "LD C,IYL"          ,  8 ,  0 ), /* 4D */
-			new OpCode( "LD C,(IY+?)"       , 19 ,  0 ), /* 4E */
+			new OpCode( "LD C,(IY?)"       , 19 ,  0 ), /* 4E */
 			new OpCode( null                ,  0 ,  0 ), /* 4F */
 			new OpCode( null                ,  0 ,  0 ), /* 50 */
 			new OpCode( null                ,  0 ,  0 ), /* 51 */
@@ -1185,7 +1185,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 53 */
 			new OpCode( "LD D,IYH"          ,  8 ,  0 ), /* 54 */
 			new OpCode( "LD D,IYL"          ,  8 ,  0 ), /* 55 */
-			new OpCode( "LD D,(IY+?)"       , 19 ,  0 ), /* 56 */
+			new OpCode( "LD D,(IY?)"       , 19 ,  0 ), /* 56 */
 			new OpCode( null                ,  0 ,  0 ), /* 57 */
 			new OpCode( null                ,  0 ,  0 ), /* 58 */
 			new OpCode( null                ,  0 ,  0 ), /* 59 */
@@ -1193,7 +1193,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 5B */
 			new OpCode( "LD E,IYH"          ,  8 ,  0 ), /* 5C */
 			new OpCode( "LD E,IYL"          ,  8 ,  0 ), /* 5D */
-			new OpCode( "LD E,(IY+?)"       , 19 ,  0 ), /* 5E */
+			new OpCode( "LD E,(IY?)"       , 19 ,  0 ), /* 5E */
 			new OpCode( null                ,  0 ,  0 ), /* 5F */
 			new OpCode( "LD IYH,B"          ,  8 ,  0 ), /* 60 */
 			new OpCode( "LD IYH,C"          ,  8 ,  0 ), /* 61 */
@@ -1201,7 +1201,7 @@ namespace yazd
 			new OpCode( "LD IYH,E"          ,  8 ,  0 ), /* 63 */
 			new OpCode( "LD IYH,IYH"        ,  8 ,  0 ), /* 64 */
 			new OpCode( "LD IYH,IYL"        ,  8 ,  0 ), /* 65 */
-			new OpCode( "LD H,(IY+?)"       , 19 ,  0 ), /* 66 */
+			new OpCode( "LD H,(IY?)"       , 19 ,  0 ), /* 66 */
 			new OpCode( "LD IYH,A"          ,  8 ,  0 ), /* 67 */
 			new OpCode( "LD IYL,B"          ,  8 ,  0 ), /* 68 */
 			new OpCode( "LD IYL,C"          ,  8 ,  0 ), /* 69 */
@@ -1209,23 +1209,23 @@ namespace yazd
 			new OpCode( "LD IYL,E"          ,  8 ,  0 ), /* 6B */
 			new OpCode( "LD IYL,IYH"        ,  8 ,  0 ), /* 6C */
 			new OpCode( "LD IYL,IYL"        ,  8 ,  0 ), /* 6D */
-			new OpCode( "LD L,(IY+?)"       , 19 ,  0 ), /* 6E */
+			new OpCode( "LD L,(IY?)"       , 19 ,  0 ), /* 6E */
 			new OpCode( "LD IYL,A"          ,  8 ,  0 ), /* 6F */
-			new OpCode( "LD (IY+?),B"       , 19 ,  0 ), /* 70 */
-			new OpCode( "LD (IY+?),C"       , 19 ,  0 ), /* 71 */
-			new OpCode( "LD (IY+?),D"       , 19 ,  0 ), /* 72 */
-			new OpCode( "LD (IY+?),E"       , 19 ,  0 ), /* 73 */
-			new OpCode( "LD (IY+?),H"       , 19 ,  0 ), /* 74 */
-			new OpCode( "LD (IY+?),L"       , 19 ,  0 ), /* 75 */
+			new OpCode( "LD (IY?),B"       , 19 ,  0 ), /* 70 */
+			new OpCode( "LD (IY?),C"       , 19 ,  0 ), /* 71 */
+			new OpCode( "LD (IY?),D"       , 19 ,  0 ), /* 72 */
+			new OpCode( "LD (IY?),E"       , 19 ,  0 ), /* 73 */
+			new OpCode( "LD (IY?),H"       , 19 ,  0 ), /* 74 */
+			new OpCode( "LD (IY?),L"       , 19 ,  0 ), /* 75 */
 			new OpCode( null                ,  0 ,  0 ), /* 76 */
-			new OpCode( "LD (IY+?),A"       , 19 ,  0 ), /* 77 */
+			new OpCode( "LD (IY?),A"       , 19 ,  0 ), /* 77 */
 			new OpCode( null                ,  0 ,  0 ), /* 78 */
 			new OpCode( null                ,  0 ,  0 ), /* 79 */
 			new OpCode( null                ,  0 ,  0 ), /* 7A */
 			new OpCode( null                ,  0 ,  0 ), /* 7B */
 			new OpCode( "LD A,IYH"          ,  8 ,  0 ), /* 7C */
 			new OpCode( "LD A,IYL"          ,  8 ,  0 ), /* 7D */
-			new OpCode( "LD A,(IY+?)"       , 19 ,  0 ), /* 7E */
+			new OpCode( "LD A,(IY?)"       , 19 ,  0 ), /* 7E */
 			new OpCode( null                ,  0 ,  0 ), /* 7F */
 			new OpCode( null                ,  0 ,  0 ), /* 80 */
 			new OpCode( null                ,  0 ,  0 ), /* 81 */
@@ -1233,7 +1233,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 83 */
 			new OpCode( "ADD A,IYH"         ,  8 ,  0 ), /* 84 */
 			new OpCode( "ADD A,IYL"         ,  8 ,  0 ), /* 85 */
-			new OpCode( "ADD A,(IY+?)"      , 19 ,  0 ), /* 86 */
+			new OpCode( "ADD A,(IY?)"      , 19 ,  0 ), /* 86 */
 			new OpCode( null                ,  0 ,  0 ), /* 87 */
 			new OpCode( null                ,  0 ,  0 ), /* 88 */
 			new OpCode( null                ,  0 ,  0 ), /* 89 */
@@ -1241,7 +1241,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 8B */
 			new OpCode( "ADC A,IYH"         ,  8 ,  0 ), /* 8C */
 			new OpCode( "ADC A,IYL"         ,  8 ,  0 ), /* 8D */
-			new OpCode( "ADC A,(IY+?)"      , 19 ,  0 ), /* 8E */
+			new OpCode( "ADC A,(IY?)"      , 19 ,  0 ), /* 8E */
 			new OpCode( null                ,  0 ,  0 ), /* 8F */
 			new OpCode( null                ,  0 ,  0 ), /* 90 */
 			new OpCode( null                ,  0 ,  0 ), /* 91 */
@@ -1249,7 +1249,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 93 */
 			new OpCode( "SUB IYH"           ,  8 ,  0 ), /* 94 */
 			new OpCode( "SUB IYL"           ,  8 ,  0 ), /* 95 */
-			new OpCode( "SUB (IY+?)"        , 19 ,  0 ), /* 96 */
+			new OpCode( "SUB (IY?)"        , 19 ,  0 ), /* 96 */
 			new OpCode( null                ,  0 ,  0 ), /* 97 */
 			new OpCode( null                ,  0 ,  0 ), /* 98 */
 			new OpCode( null                ,  0 ,  0 ), /* 99 */
@@ -1257,7 +1257,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 9B */
 			new OpCode( "SBC A,IYH"         ,  8 ,  0 ), /* 9C */
 			new OpCode( "SBC A,IYL"         ,  8 ,  0 ), /* 9D */
-			new OpCode( "SBC A,(IY+?)"      , 19 ,  0 ), /* 9E */
+			new OpCode( "SBC A,(IY?)"      , 19 ,  0 ), /* 9E */
 			new OpCode( null                ,  0 ,  0 ), /* 9F */
 			new OpCode( null                ,  0 ,  0 ), /* A0 */
 			new OpCode( null                ,  0 ,  0 ), /* A1 */
@@ -1265,7 +1265,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* A3 */
 			new OpCode( "AND IYH"           ,  8 ,  0 ), /* A4 */
 			new OpCode( "AND IYL"           ,  8 ,  0 ), /* A5 */
-			new OpCode( "AND (IY+?)"        , 19 ,  0 ), /* A6 */
+			new OpCode( "AND (IY?)"        , 19 ,  0 ), /* A6 */
 			new OpCode( null                ,  0 ,  0 ), /* A7 */
 			new OpCode( null                ,  0 ,  0 ), /* A8 */
 			new OpCode( null                ,  0 ,  0 ), /* A9 */
@@ -1273,7 +1273,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* AB */
 			new OpCode( "XOR IYH"           ,  8 ,  0 ), /* AC */
 			new OpCode( "XOR IYL"           ,  8 ,  0 ), /* AD */
-			new OpCode( "XOR (IY+?)"        , 19 ,  0 ), /* AE */
+			new OpCode( "XOR (IY?)"        , 19 ,  0 ), /* AE */
 			new OpCode( null                ,  0 ,  0 ), /* AF */
 			new OpCode( null                ,  0 ,  0 ), /* B0 */
 			new OpCode( null                ,  0 ,  0 ), /* B1 */
@@ -1281,7 +1281,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* B3 */
 			new OpCode( "OR IYH"            ,  8 ,  0 ), /* B4 */
 			new OpCode( "OR IYL"            ,  8 ,  0 ), /* B5 */
-			new OpCode( "OR (IY+?)"         , 19 ,  0 ), /* B6 */
+			new OpCode( "OR (IY?)"         , 19 ,  0 ), /* B6 */
 			new OpCode( null                ,  0 ,  0 ), /* B7 */
 			new OpCode( null                ,  0 ,  0 ), /* B8 */
 			new OpCode( null                ,  0 ,  0 ), /* B9 */
@@ -1289,7 +1289,7 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* BB */
 			new OpCode( "CP IYH"            ,  8 ,  0 ), /* BC */
 			new OpCode( "CP IYL"            ,  8 ,  0 ), /* BD */
-			new OpCode( "CP (IY+?)"         , 19 ,  0 ), /* BE */
+			new OpCode( "CP (IY?)"         , 19 ,  0 ), /* BE */
 			new OpCode( null                ,  0 ,  0 ), /* BF */
 			new OpCode( null                ,  0 ,  0 ), /* C0 */
 			new OpCode( null                ,  0 ,  0 ), /* C1 */
@@ -1361,524 +1361,524 @@ namespace yazd
 
         public static OpCode[] dasm_ddcb = new OpCode[]
         {
-            new OpCode( "LD B,RLC (IX+?)"   , 23 ,  0 ), /* 00 */
-			new OpCode( "LD C,RLC (IX+?)"   , 23 ,  0 ), /* 01 */
-			new OpCode( "LD D,RLC (IX+?)"   , 23 ,  0 ), /* 02 */
-			new OpCode( "LD E,RLC (IX+?)"   , 23 ,  0 ), /* 03 */
-			new OpCode( "LD H,RLC (IX+?)"   , 23 ,  0 ), /* 04 */
-			new OpCode( "LD L,RLC (IX+?)"   , 23 ,  0 ), /* 05 */
-			new OpCode( "RLC (IX+?)"        , 23 ,  0 ), /* 06 */
-			new OpCode( "LD A,RLC (IX+?)"   , 23 ,  0 ), /* 07 */
-			new OpCode( "LD B,RRC (IX+?)"   , 23 ,  0 ), /* 08 */
-			new OpCode( "LD C,RRC (IX+?)"   , 23 ,  0 ), /* 09 */
-			new OpCode( "LD D,RRC (IX+?)"   , 23 ,  0 ), /* 0A */
-			new OpCode( "LD E,RRC (IX+?)"   , 23 ,  0 ), /* 0B */
-			new OpCode( "LD H,RRC (IX+?)"   , 23 ,  0 ), /* 0C */
-			new OpCode( "LD L,RRC (IX+?)"   , 23 ,  0 ), /* 0D */
-			new OpCode( "RRC (IX+?)"        , 23 ,  0 ), /* 0E */
-			new OpCode( "LD A,RRC (IX+?)"   , 23 ,  0 ), /* 0F */
-			new OpCode( "LD B,RL (IX+?)"    , 23 ,  0 ), /* 10 */
-			new OpCode( "LD C,RL (IX+?)"    , 23 ,  0 ), /* 11 */
-			new OpCode( "LD D,RL (IX+?)"    , 23 ,  0 ), /* 12 */
-			new OpCode( "LD E,RL (IX+?)"    , 23 ,  0 ), /* 13 */
-			new OpCode( "LD H,RL (IX+?)"    , 23 ,  0 ), /* 14 */
-			new OpCode( "LD L,RL (IX+?)"    , 23 ,  0 ), /* 15 */
-			new OpCode( "RL (IX+?)"         , 23 ,  0 ), /* 16 */
-			new OpCode( "LD A,RL (IX+?)"    , 23 ,  0 ), /* 17 */
-			new OpCode( "LD B,RR (IX+?)"    , 23 ,  0 ), /* 18 */
-			new OpCode( "LD C,RR (IX+?)"    , 23 ,  0 ), /* 19 */
-			new OpCode( "LD D,RR (IX+?)"    , 23 ,  0 ), /* 1A */
-			new OpCode( "LD E,RR (IX+?)"    , 23 ,  0 ), /* 1B */
-			new OpCode( "LD H,RR (IX+?)"    , 23 ,  0 ), /* 1C */
-			new OpCode( "LD L,RR (IX+?)"    , 23 ,  0 ), /* 1D */
-			new OpCode( "RR (IX+?)"         , 23 ,  0 ), /* 1E */
-			new OpCode( "LD A,RR (IX+?)"    , 23 ,  0 ), /* 1F */
-			new OpCode( "LD B,SLA (IX+?)"   , 23 ,  0 ), /* 20 */
-			new OpCode( "LD C,SLA (IX+?)"   , 23 ,  0 ), /* 21 */
-			new OpCode( "LD D,SLA (IX+?)"   , 23 ,  0 ), /* 22 */
-			new OpCode( "LD E,SLA (IX+?)"   , 23 ,  0 ), /* 23 */
-			new OpCode( "LD H,SLA (IX+?)"   , 23 ,  0 ), /* 24 */
-			new OpCode( "LD L,SLA (IX+?)"   , 23 ,  0 ), /* 25 */
-			new OpCode( "SLA (IX+?)"        , 23 ,  0 ), /* 26 */
-			new OpCode( "LD A,SLA (IX+?)"   , 23 ,  0 ), /* 27 */
-			new OpCode( "LD B,SRA (IX+?)"   , 23 ,  0 ), /* 28 */
-			new OpCode( "LD C,SRA (IX+?)"   , 23 ,  0 ), /* 29 */
-			new OpCode( "LD D,SRA (IX+?)"   , 23 ,  0 ), /* 2A */
-			new OpCode( "LD E,SRA (IX+?)"   , 23 ,  0 ), /* 2B */
-			new OpCode( "LD H,SRA (IX+?)"   , 23 ,  0 ), /* 2C */
-			new OpCode( "LD L,SRA (IX+?)"   , 23 ,  0 ), /* 2D */
-			new OpCode( "SRA (IX+?)"        , 23 ,  0 ), /* 2E */
-			new OpCode( "LD A,SRA (IX+?)"   , 23 ,  0 ), /* 2F */
-			new OpCode( "LD B,SLL (IX+?)"   , 23 ,  0 ), /* 30 */
-			new OpCode( "LD C,SLL (IX+?)"   , 23 ,  0 ), /* 31 */
-			new OpCode( "LD D,SLL (IX+?)"   , 23 ,  0 ), /* 32 */
-			new OpCode( "LD E,SLL (IX+?)"   , 23 ,  0 ), /* 33 */
-			new OpCode( "LD H,SLL (IX+?)"   , 23 ,  0 ), /* 34 */
-			new OpCode( "LD L,SLL (IX+?)"   , 23 ,  0 ), /* 35 */
-			new OpCode( "SLL (IX+?)"        , 23 ,  0 ), /* 36 */
-			new OpCode( "LD A,SLL (IX+?)"   , 23 ,  0 ), /* 37 */
-			new OpCode( "LD B,SRL (IX+?)"   , 23 ,  0 ), /* 38 */
-			new OpCode( "LD C,SRL (IX+?)"   , 23 ,  0 ), /* 39 */
-			new OpCode( "LD D,SRL (IX+?)"   , 23 ,  0 ), /* 3A */
-			new OpCode( "LD E,SRL (IX+?)"   , 23 ,  0 ), /* 3B */
-			new OpCode( "LD H,SRL (IX+?)"   , 23 ,  0 ), /* 3C */
-			new OpCode( "LD L,SRL (IX+?)"   , 23 ,  0 ), /* 3D */
-			new OpCode( "SRL (IX+?)"        , 23 ,  0 ), /* 3E */
-			new OpCode( "LD A,SRL (IX+?)"   , 23 ,  0 ), /* 3F */
-			new OpCode( "BIT 0,(IX+?)"      , 20 ,  0 ), /* 40 */
-			new OpCode( "BIT 0,(IX+?)"      , 20 ,  0 ), /* 41 */
-			new OpCode( "BIT 0,(IX+?)"      , 20 ,  0 ), /* 42 */
-			new OpCode( "BIT 0,(IX+?)"      , 20 ,  0 ), /* 43 */
-			new OpCode( "BIT 0,(IX+?)"      , 20 ,  0 ), /* 44 */
-			new OpCode( "BIT 0,(IX+?)"      , 20 ,  0 ), /* 45 */
-			new OpCode( "BIT 0,(IX+?)"      , 20 ,  0 ), /* 46 */
-			new OpCode( "BIT 0,(IX+?)"      , 20 ,  0 ), /* 47 */
-			new OpCode( "BIT 1,(IX+?)"      , 20 ,  0 ), /* 48 */
-			new OpCode( "BIT 1,(IX+?)"      , 20 ,  0 ), /* 49 */
-			new OpCode( "BIT 1,(IX+?)"      , 20 ,  0 ), /* 4A */
-			new OpCode( "BIT 1,(IX+?)"      , 20 ,  0 ), /* 4B */
-			new OpCode( "BIT 1,(IX+?)"      , 20 ,  0 ), /* 4C */
-			new OpCode( "BIT 1,(IX+?)"      , 20 ,  0 ), /* 4D */
-			new OpCode( "BIT 1,(IX+?)"      , 20 ,  0 ), /* 4E */
-			new OpCode( "BIT 1,(IX+?)"      , 20 ,  0 ), /* 4F */
-			new OpCode( "BIT 2,(IX+?)"      , 20 ,  0 ), /* 50 */
-			new OpCode( "BIT 2,(IX+?)"      , 20 ,  0 ), /* 51 */
-			new OpCode( "BIT 2,(IX+?)"      , 20 ,  0 ), /* 52 */
-			new OpCode( "BIT 2,(IX+?)"      , 20 ,  0 ), /* 53 */
-			new OpCode( "BIT 2,(IX+?)"      , 20 ,  0 ), /* 54 */
-			new OpCode( "BIT 2,(IX+?)"      , 20 ,  0 ), /* 55 */
-			new OpCode( "BIT 2,(IX+?)"      , 20 ,  0 ), /* 56 */
-			new OpCode( "BIT 2,(IX+?)"      , 20 ,  0 ), /* 57 */
-			new OpCode( "BIT 3,(IX+?)"      , 20 ,  0 ), /* 58 */
-			new OpCode( "BIT 3,(IX+?)"      , 20 ,  0 ), /* 59 */
-			new OpCode( "BIT 3,(IX+?)"      , 20 ,  0 ), /* 5A */
-			new OpCode( "BIT 3,(IX+?)"      , 20 ,  0 ), /* 5B */
-			new OpCode( "BIT 3,(IX+?)"      , 20 ,  0 ), /* 5C */
-			new OpCode( "BIT 3,(IX+?)"      , 20 ,  0 ), /* 5D */
-			new OpCode( "BIT 3,(IX+?)"      , 20 ,  0 ), /* 5E */
-			new OpCode( "BIT 3,(IX+?)"      , 20 ,  0 ), /* 5F */
-			new OpCode( "BIT 4,(IX+?)"      , 20 ,  0 ), /* 60 */
-			new OpCode( "BIT 4,(IX+?)"      , 20 ,  0 ), /* 61 */
-			new OpCode( "BIT 4,(IX+?)"      , 20 ,  0 ), /* 62 */
-			new OpCode( "BIT 4,(IX+?)"      , 20 ,  0 ), /* 63 */
-			new OpCode( "BIT 4,(IX+?)"      , 20 ,  0 ), /* 64 */
-			new OpCode( "BIT 4,(IX+?)"      , 20 ,  0 ), /* 65 */
-			new OpCode( "BIT 4,(IX+?)"      , 20 ,  0 ), /* 66 */
-			new OpCode( "BIT 4,(IX+?)"      , 20 ,  0 ), /* 67 */
-			new OpCode( "BIT 5,(IX+?)"      , 20 ,  0 ), /* 68 */
-			new OpCode( "BIT 5,(IX+?)"      , 20 ,  0 ), /* 69 */
-			new OpCode( "BIT 5,(IX+?)"      , 20 ,  0 ), /* 6A */
-			new OpCode( "BIT 5,(IX+?)"      , 20 ,  0 ), /* 6B */
-			new OpCode( "BIT 5,(IX+?)"      , 20 ,  0 ), /* 6C */
-			new OpCode( "BIT 5,(IX+?)"      , 20 ,  0 ), /* 6D */
-			new OpCode( "BIT 5,(IX+?)"      , 20 ,  0 ), /* 6E */
-			new OpCode( "BIT 5,(IX+?)"      , 20 ,  0 ), /* 6F */
-			new OpCode( "BIT 6,(IX+?)"      , 20 ,  0 ), /* 70 */
-			new OpCode( "BIT 6,(IX+?)"      , 20 ,  0 ), /* 71 */
-			new OpCode( "BIT 6,(IX+?)"      , 20 ,  0 ), /* 72 */
-			new OpCode( "BIT 6,(IX+?)"      , 20 ,  0 ), /* 73 */
-			new OpCode( "BIT 6,(IX+?)"      , 20 ,  0 ), /* 74 */
-			new OpCode( "BIT 6,(IX+?)"      , 20 ,  0 ), /* 75 */
-			new OpCode( "BIT 6,(IX+?)"      , 20 ,  0 ), /* 76 */
-			new OpCode( "BIT 6,(IX+?)"      , 20 ,  0 ), /* 77 */
-			new OpCode( "BIT 7,(IX+?)"      , 20 ,  0 ), /* 78 */
-			new OpCode( "BIT 7,(IX+?)"      , 20 ,  0 ), /* 79 */
-			new OpCode( "BIT 7,(IX+?)"      , 20 ,  0 ), /* 7A */
-			new OpCode( "BIT 7,(IX+?)"      , 20 ,  0 ), /* 7B */
-			new OpCode( "BIT 7,(IX+?)"      , 20 ,  0 ), /* 7C */
-			new OpCode( "BIT 7,(IX+?)"      , 20 ,  0 ), /* 7D */
-			new OpCode( "BIT 7,(IX+?)"      , 20 ,  0 ), /* 7E */
-			new OpCode( "BIT 7,(IX+?)"      , 20 ,  0 ), /* 7F */
-			new OpCode( "LD B,RES 0,(IX+?)" , 23 ,  0 ), /* 80 */
-			new OpCode( "LD C,RES 0,(IX+?)" , 23 ,  0 ), /* 81 */
-			new OpCode( "LD D,RES 0,(IX+?)" , 23 ,  0 ), /* 82 */
-			new OpCode( "LD E,RES 0,(IX+?)" , 23 ,  0 ), /* 83 */
-			new OpCode( "LD H,RES 0,(IX+?)" , 23 ,  0 ), /* 84 */
-			new OpCode( "LD L,RES 0,(IX+?)" , 23 ,  0 ), /* 85 */
-			new OpCode( "RES 0,(IX+?)"      , 23 ,  0 ), /* 86 */
-			new OpCode( "LD A,RES 0,(IX+?)" , 23 ,  0 ), /* 87 */
-			new OpCode( "LD B,RES 1,(IX+?)" , 23 ,  0 ), /* 88 */
-			new OpCode( "LD C,RES 1,(IX+?)" , 23 ,  0 ), /* 89 */
-			new OpCode( "LD D,RES 1,(IX+?)" , 23 ,  0 ), /* 8A */
-			new OpCode( "LD E,RES 1,(IX+?)" , 23 ,  0 ), /* 8B */
-			new OpCode( "LD H,RES 1,(IX+?)" , 23 ,  0 ), /* 8C */
-			new OpCode( "LD L,RES 1,(IX+?)" , 23 ,  0 ), /* 8D */
-			new OpCode( "RES 1,(IX+?)"      , 23 ,  0 ), /* 8E */
-			new OpCode( "LD A,RES 1,(IX+?)" , 23 ,  0 ), /* 8F */
-			new OpCode( "LD B,RES 2,(IX+?)" , 23 ,  0 ), /* 90 */
-			new OpCode( "LD C,RES 2,(IX+?)" , 23 ,  0 ), /* 91 */
-			new OpCode( "LD D,RES 2,(IX+?)" , 23 ,  0 ), /* 92 */
-			new OpCode( "LD E,RES 2,(IX+?)" , 23 ,  0 ), /* 93 */
-			new OpCode( "LD H,RES 2,(IX+?)" , 23 ,  0 ), /* 94 */
-			new OpCode( "LD L,RES 2,(IX+?)" , 23 ,  0 ), /* 95 */
-			new OpCode( "RES 2,(IX+?)"      , 23 ,  0 ), /* 96 */
-			new OpCode( "LD A,RES 2,(IX+?)" , 23 ,  0 ), /* 97 */
-			new OpCode( "LD B,RES 3,(IX+?)" , 23 ,  0 ), /* 98 */
-			new OpCode( "LD C,RES 3,(IX+?)" , 23 ,  0 ), /* 99 */
-			new OpCode( "LD D,RES 3,(IX+?)" , 23 ,  0 ), /* 9A */
-			new OpCode( "LD E,RES 3,(IX+?)" , 23 ,  0 ), /* 9B */
-			new OpCode( "LD H,RES 3,(IX+?)" , 23 ,  0 ), /* 9C */
-			new OpCode( "LD L,RES 3,(IX+?)" , 23 ,  0 ), /* 9D */
-			new OpCode( "RES 3,(IX+?)"      , 23 ,  0 ), /* 9E */
-			new OpCode( "LD A,RES 3,(IX+?)" , 23 ,  0 ), /* 9F */
-			new OpCode( "LD B,RES 4,(IX+?)" , 23 ,  0 ), /* A0 */
-			new OpCode( "LD C,RES 4,(IX+?)" , 23 ,  0 ), /* A1 */
-			new OpCode( "LD D,RES 4,(IX+?)" , 23 ,  0 ), /* A2 */
-			new OpCode( "LD E,RES 4,(IX+?)" , 23 ,  0 ), /* A3 */
-			new OpCode( "LD H,RES 4,(IX+?)" , 23 ,  0 ), /* A4 */
-			new OpCode( "LD L,RES 4,(IX+?)" , 23 ,  0 ), /* A5 */
-			new OpCode( "RES 4,(IX+?)"      , 23 ,  0 ), /* A6 */
-			new OpCode( "LD A,RES 4,(IX+?)" , 23 ,  0 ), /* A7 */
-			new OpCode( "LD B,RES 5,(IX+?)" , 23 ,  0 ), /* A8 */
-			new OpCode( "LD C,RES 5,(IX+?)" , 23 ,  0 ), /* A9 */
-			new OpCode( "LD D,RES 5,(IX+?)" , 23 ,  0 ), /* AA */
-			new OpCode( "LD E,RES 5,(IX+?)" , 23 ,  0 ), /* AB */
-			new OpCode( "LD H,RES 5,(IX+?)" , 23 ,  0 ), /* AC */
-			new OpCode( "LD L,RES 5,(IX+?)" , 23 ,  0 ), /* AD */
-			new OpCode( "RES 5,(IX+?)"      , 23 ,  0 ), /* AE */
-			new OpCode( "LD A,RES 5,(IX+?)" , 23 ,  0 ), /* AF */
-			new OpCode( "LD B,RES 6,(IX+?)" , 23 ,  0 ), /* B0 */
-			new OpCode( "LD C,RES 6,(IX+?)" , 23 ,  0 ), /* B1 */
-			new OpCode( "LD D,RES 6,(IX+?)" , 23 ,  0 ), /* B2 */
-			new OpCode( "LD E,RES 6,(IX+?)" , 23 ,  0 ), /* B3 */
-			new OpCode( "LD H,RES 6,(IX+?)" , 23 ,  0 ), /* B4 */
-			new OpCode( "LD L,RES 6,(IX+?)" , 23 ,  0 ), /* B5 */
-			new OpCode( "RES 6,(IX+?)"      , 23 ,  0 ), /* B6 */
-			new OpCode( "LD A,RES 6,(IX+?)" , 23 ,  0 ), /* B7 */
-			new OpCode( "LD B,RES 7,(IX+?)" , 23 ,  0 ), /* B8 */
-			new OpCode( "LD C,RES 7,(IX+?)" , 23 ,  0 ), /* B9 */
-			new OpCode( "LD D,RES 7,(IX+?)" , 23 ,  0 ), /* BA */
-			new OpCode( "LD E,RES 7,(IX+?)" , 23 ,  0 ), /* BB */
-			new OpCode( "LD H,RES 7,(IX+?)" , 23 ,  0 ), /* BC */
-			new OpCode( "LD L,RES 7,(IX+?)" , 23 ,  0 ), /* BD */
-			new OpCode( "RES 7,(IX+?)"      , 23 ,  0 ), /* BE */
-			new OpCode( "LD A,RES 7,(IX+?)" , 23 ,  0 ), /* BF */
-			new OpCode( "LD B,SET 0,(IX+?)" , 23 ,  0 ), /* C0 */
-			new OpCode( "LD C,SET 0,(IX+?)" , 23 ,  0 ), /* C1 */
-			new OpCode( "LD D,SET 0,(IX+?)" , 23 ,  0 ), /* C2 */
-			new OpCode( "LD E,SET 0,(IX+?)" , 23 ,  0 ), /* C3 */
-			new OpCode( "LD H,SET 0,(IX+?)" , 23 ,  0 ), /* C4 */
-			new OpCode( "LD L,SET 0,(IX+?)" , 23 ,  0 ), /* C5 */
-			new OpCode( "SET 0,(IX+?)"      , 23 ,  0 ), /* C6 */
-			new OpCode( "LD A,SET 0,(IX+?)" , 23 ,  0 ), /* C7 */
-			new OpCode( "LD B,SET 1,(IX+?)" , 23 ,  0 ), /* C8 */
-			new OpCode( "LD C,SET 1,(IX+?)" , 23 ,  0 ), /* C9 */
-			new OpCode( "LD D,SET 1,(IX+?)" , 23 ,  0 ), /* CA */
-			new OpCode( "LD E,SET 1,(IX+?)" , 23 ,  0 ), /* CB */
-			new OpCode( "LD H,SET 1,(IX+?)" , 23 ,  0 ), /* CC */
-			new OpCode( "LD L,SET 1,(IX+?)" , 23 ,  0 ), /* CD */
-			new OpCode( "SET 1,(IX+?)"      , 23 ,  0 ), /* CE */
-			new OpCode( "LD A,SET 1,(IX+?)" , 23 ,  0 ), /* CF */
-			new OpCode( "LD B,SET 2,(IX+?)" , 23 ,  0 ), /* D0 */
-			new OpCode( "LD C,SET 2,(IX+?)" , 23 ,  0 ), /* D1 */
-			new OpCode( "LD D,SET 2,(IX+?)" , 23 ,  0 ), /* D2 */
-			new OpCode( "LD E,SET 2,(IX+?)" , 23 ,  0 ), /* D3 */
-			new OpCode( "LD H,SET 2,(IX+?)" , 23 ,  0 ), /* D4 */
-			new OpCode( "LD L,SET 2,(IX+?)" , 23 ,  0 ), /* D5 */
-			new OpCode( "SET 2,(IX+?)"      , 23 ,  0 ), /* D6 */
-			new OpCode( "LD A,SET 2,(IX+?)" , 23 ,  0 ), /* D7 */
-			new OpCode( "LD B,SET 3,(IX+?)" , 23 ,  0 ), /* D8 */
-			new OpCode( "LD C,SET 3,(IX+?)" , 23 ,  0 ), /* D9 */
-			new OpCode( "LD D,SET 3,(IX+?)" , 23 ,  0 ), /* DA */
-			new OpCode( "LD E,SET 3,(IX+?)" , 23 ,  0 ), /* DB */
-			new OpCode( "LD H,SET 3,(IX+?)" , 23 ,  0 ), /* DC */
-			new OpCode( "LD L,SET 3,(IX+?)" , 23 ,  0 ), /* DD */
-			new OpCode( "SET 3,(IX+?)"      , 23 ,  0 ), /* DE */
-			new OpCode( "LD A,SET 3,(IX+?)" , 23 ,  0 ), /* DF */
-			new OpCode( "LD B,SET 4,(IX+?)" , 23 ,  0 ), /* E0 */
-			new OpCode( "LD C,SET 4,(IX+?)" , 23 ,  0 ), /* E1 */
-			new OpCode( "LD D,SET 4,(IX+?)" , 23 ,  0 ), /* E2 */
-			new OpCode( "LD E,SET 4,(IX+?)" , 23 ,  0 ), /* E3 */
-			new OpCode( "LD H,SET 4,(IX+?)" , 23 ,  0 ), /* E4 */
-			new OpCode( "LD L,SET 4,(IX+?)" , 23 ,  0 ), /* E5 */
-			new OpCode( "SET 4,(IX+?)"      , 23 ,  0 ), /* E6 */
-			new OpCode( "LD A,SET 4,(IX+?)" , 23 ,  0 ), /* E7 */
-			new OpCode( "LD B,SET 5,(IX+?)" , 23 ,  0 ), /* E8 */
-			new OpCode( "LD C,SET 5,(IX+?)" , 23 ,  0 ), /* E9 */
-			new OpCode( "LD D,SET 5,(IX+?)" , 23 ,  0 ), /* EA */
-			new OpCode( "LD E,SET 5,(IX+?)" , 23 ,  0 ), /* EB */
-			new OpCode( "LD H,SET 5,(IX+?)" , 23 ,  0 ), /* EC */
-			new OpCode( "LD L,SET 5,(IX+?)" , 23 ,  0 ), /* ED */
-			new OpCode( "SET 5,(IX+?)"      , 23 ,  0 ), /* EE */
-			new OpCode( "LD A,SET 5,(IX+?)" , 23 ,  0 ), /* EF */
-			new OpCode( "LD B,SET 6,(IX+?)" , 23 ,  0 ), /* F0 */
-			new OpCode( "LD C,SET 6,(IX+?)" , 23 ,  0 ), /* F1 */
-			new OpCode( "LD D,SET 6,(IX+?)" , 23 ,  0 ), /* F2 */
-			new OpCode( "LD E,SET 6,(IX+?)" , 23 ,  0 ), /* F3 */
-			new OpCode( "LD H,SET 6,(IX+?)" , 23 ,  0 ), /* F4 */
-			new OpCode( "LD L,SET 6,(IX+?)" , 23 ,  0 ), /* F5 */
-			new OpCode( "SET 6,(IX+?)"      , 23 ,  0 ), /* F6 */
-			new OpCode( "LD A,SET 6,(IX+?)" , 23 ,  0 ), /* F7 */
-			new OpCode( "LD B,SET 7,(IX+?)" , 23 ,  0 ), /* F8 */
-			new OpCode( "LD C,SET 7,(IX+?)" , 23 ,  0 ), /* F9 */
-			new OpCode( "LD D,SET 7,(IX+?)" , 23 ,  0 ), /* FA */
-			new OpCode( "LD E,SET 7,(IX+?)" , 23 ,  0 ), /* FB */
-			new OpCode( "LD H,SET 7,(IX+?)" , 23 ,  0 ), /* FC */
-			new OpCode( "LD L,SET 7,(IX+?)" , 23 ,  0 ), /* FD */
-			new OpCode( "SET 7,(IX+?)"      , 23 ,  0 ), /* FE */
-			new OpCode( "LD A,SET 7,(IX+?)" , 23 ,  0 ), /* FF */
+            new OpCode( "LD B,RLC (IX?)"   , 23 ,  0 ), /* 00 */
+			new OpCode( "LD C,RLC (IX?)"   , 23 ,  0 ), /* 01 */
+			new OpCode( "LD D,RLC (IX?)"   , 23 ,  0 ), /* 02 */
+			new OpCode( "LD E,RLC (IX?)"   , 23 ,  0 ), /* 03 */
+			new OpCode( "LD H,RLC (IX?)"   , 23 ,  0 ), /* 04 */
+			new OpCode( "LD L,RLC (IX?)"   , 23 ,  0 ), /* 05 */
+			new OpCode( "RLC (IX?)"        , 23 ,  0 ), /* 06 */
+			new OpCode( "LD A,RLC (IX?)"   , 23 ,  0 ), /* 07 */
+			new OpCode( "LD B,RRC (IX?)"   , 23 ,  0 ), /* 08 */
+			new OpCode( "LD C,RRC (IX?)"   , 23 ,  0 ), /* 09 */
+			new OpCode( "LD D,RRC (IX?)"   , 23 ,  0 ), /* 0A */
+			new OpCode( "LD E,RRC (IX?)"   , 23 ,  0 ), /* 0B */
+			new OpCode( "LD H,RRC (IX?)"   , 23 ,  0 ), /* 0C */
+			new OpCode( "LD L,RRC (IX?)"   , 23 ,  0 ), /* 0D */
+			new OpCode( "RRC (IX?)"        , 23 ,  0 ), /* 0E */
+			new OpCode( "LD A,RRC (IX?)"   , 23 ,  0 ), /* 0F */
+			new OpCode( "LD B,RL (IX?)"    , 23 ,  0 ), /* 10 */
+			new OpCode( "LD C,RL (IX?)"    , 23 ,  0 ), /* 11 */
+			new OpCode( "LD D,RL (IX?)"    , 23 ,  0 ), /* 12 */
+			new OpCode( "LD E,RL (IX?)"    , 23 ,  0 ), /* 13 */
+			new OpCode( "LD H,RL (IX?)"    , 23 ,  0 ), /* 14 */
+			new OpCode( "LD L,RL (IX?)"    , 23 ,  0 ), /* 15 */
+			new OpCode( "RL (IX?)"         , 23 ,  0 ), /* 16 */
+			new OpCode( "LD A,RL (IX?)"    , 23 ,  0 ), /* 17 */
+			new OpCode( "LD B,RR (IX?)"    , 23 ,  0 ), /* 18 */
+			new OpCode( "LD C,RR (IX?)"    , 23 ,  0 ), /* 19 */
+			new OpCode( "LD D,RR (IX?)"    , 23 ,  0 ), /* 1A */
+			new OpCode( "LD E,RR (IX?)"    , 23 ,  0 ), /* 1B */
+			new OpCode( "LD H,RR (IX?)"    , 23 ,  0 ), /* 1C */
+			new OpCode( "LD L,RR (IX?)"    , 23 ,  0 ), /* 1D */
+			new OpCode( "RR (IX?)"         , 23 ,  0 ), /* 1E */
+			new OpCode( "LD A,RR (IX?)"    , 23 ,  0 ), /* 1F */
+			new OpCode( "LD B,SLA (IX?)"   , 23 ,  0 ), /* 20 */
+			new OpCode( "LD C,SLA (IX?)"   , 23 ,  0 ), /* 21 */
+			new OpCode( "LD D,SLA (IX?)"   , 23 ,  0 ), /* 22 */
+			new OpCode( "LD E,SLA (IX?)"   , 23 ,  0 ), /* 23 */
+			new OpCode( "LD H,SLA (IX?)"   , 23 ,  0 ), /* 24 */
+			new OpCode( "LD L,SLA (IX?)"   , 23 ,  0 ), /* 25 */
+			new OpCode( "SLA (IX?)"        , 23 ,  0 ), /* 26 */
+			new OpCode( "LD A,SLA (IX?)"   , 23 ,  0 ), /* 27 */
+			new OpCode( "LD B,SRA (IX?)"   , 23 ,  0 ), /* 28 */
+			new OpCode( "LD C,SRA (IX?)"   , 23 ,  0 ), /* 29 */
+			new OpCode( "LD D,SRA (IX?)"   , 23 ,  0 ), /* 2A */
+			new OpCode( "LD E,SRA (IX?)"   , 23 ,  0 ), /* 2B */
+			new OpCode( "LD H,SRA (IX?)"   , 23 ,  0 ), /* 2C */
+			new OpCode( "LD L,SRA (IX?)"   , 23 ,  0 ), /* 2D */
+			new OpCode( "SRA (IX?)"        , 23 ,  0 ), /* 2E */
+			new OpCode( "LD A,SRA (IX?)"   , 23 ,  0 ), /* 2F */
+			new OpCode( "LD B,SLL (IX?)"   , 23 ,  0 ), /* 30 */
+			new OpCode( "LD C,SLL (IX?)"   , 23 ,  0 ), /* 31 */
+			new OpCode( "LD D,SLL (IX?)"   , 23 ,  0 ), /* 32 */
+			new OpCode( "LD E,SLL (IX?)"   , 23 ,  0 ), /* 33 */
+			new OpCode( "LD H,SLL (IX?)"   , 23 ,  0 ), /* 34 */
+			new OpCode( "LD L,SLL (IX?)"   , 23 ,  0 ), /* 35 */
+			new OpCode( "SLL (IX?)"        , 23 ,  0 ), /* 36 */
+			new OpCode( "LD A,SLL (IX?)"   , 23 ,  0 ), /* 37 */
+			new OpCode( "LD B,SRL (IX?)"   , 23 ,  0 ), /* 38 */
+			new OpCode( "LD C,SRL (IX?)"   , 23 ,  0 ), /* 39 */
+			new OpCode( "LD D,SRL (IX?)"   , 23 ,  0 ), /* 3A */
+			new OpCode( "LD E,SRL (IX?)"   , 23 ,  0 ), /* 3B */
+			new OpCode( "LD H,SRL (IX?)"   , 23 ,  0 ), /* 3C */
+			new OpCode( "LD L,SRL (IX?)"   , 23 ,  0 ), /* 3D */
+			new OpCode( "SRL (IX?)"        , 23 ,  0 ), /* 3E */
+			new OpCode( "LD A,SRL (IX?)"   , 23 ,  0 ), /* 3F */
+			new OpCode( "BIT 0,(IX?)"      , 20 ,  0 ), /* 40 */
+			new OpCode( "BIT 0,(IX?)"      , 20 ,  0 ), /* 41 */
+			new OpCode( "BIT 0,(IX?)"      , 20 ,  0 ), /* 42 */
+			new OpCode( "BIT 0,(IX?)"      , 20 ,  0 ), /* 43 */
+			new OpCode( "BIT 0,(IX?)"      , 20 ,  0 ), /* 44 */
+			new OpCode( "BIT 0,(IX?)"      , 20 ,  0 ), /* 45 */
+			new OpCode( "BIT 0,(IX?)"      , 20 ,  0 ), /* 46 */
+			new OpCode( "BIT 0,(IX?)"      , 20 ,  0 ), /* 47 */
+			new OpCode( "BIT 1,(IX?)"      , 20 ,  0 ), /* 48 */
+			new OpCode( "BIT 1,(IX?)"      , 20 ,  0 ), /* 49 */
+			new OpCode( "BIT 1,(IX?)"      , 20 ,  0 ), /* 4A */
+			new OpCode( "BIT 1,(IX?)"      , 20 ,  0 ), /* 4B */
+			new OpCode( "BIT 1,(IX?)"      , 20 ,  0 ), /* 4C */
+			new OpCode( "BIT 1,(IX?)"      , 20 ,  0 ), /* 4D */
+			new OpCode( "BIT 1,(IX?)"      , 20 ,  0 ), /* 4E */
+			new OpCode( "BIT 1,(IX?)"      , 20 ,  0 ), /* 4F */
+			new OpCode( "BIT 2,(IX?)"      , 20 ,  0 ), /* 50 */
+			new OpCode( "BIT 2,(IX?)"      , 20 ,  0 ), /* 51 */
+			new OpCode( "BIT 2,(IX?)"      , 20 ,  0 ), /* 52 */
+			new OpCode( "BIT 2,(IX?)"      , 20 ,  0 ), /* 53 */
+			new OpCode( "BIT 2,(IX?)"      , 20 ,  0 ), /* 54 */
+			new OpCode( "BIT 2,(IX?)"      , 20 ,  0 ), /* 55 */
+			new OpCode( "BIT 2,(IX?)"      , 20 ,  0 ), /* 56 */
+			new OpCode( "BIT 2,(IX?)"      , 20 ,  0 ), /* 57 */
+			new OpCode( "BIT 3,(IX?)"      , 20 ,  0 ), /* 58 */
+			new OpCode( "BIT 3,(IX?)"      , 20 ,  0 ), /* 59 */
+			new OpCode( "BIT 3,(IX?)"      , 20 ,  0 ), /* 5A */
+			new OpCode( "BIT 3,(IX?)"      , 20 ,  0 ), /* 5B */
+			new OpCode( "BIT 3,(IX?)"      , 20 ,  0 ), /* 5C */
+			new OpCode( "BIT 3,(IX?)"      , 20 ,  0 ), /* 5D */
+			new OpCode( "BIT 3,(IX?)"      , 20 ,  0 ), /* 5E */
+			new OpCode( "BIT 3,(IX?)"      , 20 ,  0 ), /* 5F */
+			new OpCode( "BIT 4,(IX?)"      , 20 ,  0 ), /* 60 */
+			new OpCode( "BIT 4,(IX?)"      , 20 ,  0 ), /* 61 */
+			new OpCode( "BIT 4,(IX?)"      , 20 ,  0 ), /* 62 */
+			new OpCode( "BIT 4,(IX?)"      , 20 ,  0 ), /* 63 */
+			new OpCode( "BIT 4,(IX?)"      , 20 ,  0 ), /* 64 */
+			new OpCode( "BIT 4,(IX?)"      , 20 ,  0 ), /* 65 */
+			new OpCode( "BIT 4,(IX?)"      , 20 ,  0 ), /* 66 */
+			new OpCode( "BIT 4,(IX?)"      , 20 ,  0 ), /* 67 */
+			new OpCode( "BIT 5,(IX?)"      , 20 ,  0 ), /* 68 */
+			new OpCode( "BIT 5,(IX?)"      , 20 ,  0 ), /* 69 */
+			new OpCode( "BIT 5,(IX?)"      , 20 ,  0 ), /* 6A */
+			new OpCode( "BIT 5,(IX?)"      , 20 ,  0 ), /* 6B */
+			new OpCode( "BIT 5,(IX?)"      , 20 ,  0 ), /* 6C */
+			new OpCode( "BIT 5,(IX?)"      , 20 ,  0 ), /* 6D */
+			new OpCode( "BIT 5,(IX?)"      , 20 ,  0 ), /* 6E */
+			new OpCode( "BIT 5,(IX?)"      , 20 ,  0 ), /* 6F */
+			new OpCode( "BIT 6,(IX?)"      , 20 ,  0 ), /* 70 */
+			new OpCode( "BIT 6,(IX?)"      , 20 ,  0 ), /* 71 */
+			new OpCode( "BIT 6,(IX?)"      , 20 ,  0 ), /* 72 */
+			new OpCode( "BIT 6,(IX?)"      , 20 ,  0 ), /* 73 */
+			new OpCode( "BIT 6,(IX?)"      , 20 ,  0 ), /* 74 */
+			new OpCode( "BIT 6,(IX?)"      , 20 ,  0 ), /* 75 */
+			new OpCode( "BIT 6,(IX?)"      , 20 ,  0 ), /* 76 */
+			new OpCode( "BIT 6,(IX?)"      , 20 ,  0 ), /* 77 */
+			new OpCode( "BIT 7,(IX?)"      , 20 ,  0 ), /* 78 */
+			new OpCode( "BIT 7,(IX?)"      , 20 ,  0 ), /* 79 */
+			new OpCode( "BIT 7,(IX?)"      , 20 ,  0 ), /* 7A */
+			new OpCode( "BIT 7,(IX?)"      , 20 ,  0 ), /* 7B */
+			new OpCode( "BIT 7,(IX?)"      , 20 ,  0 ), /* 7C */
+			new OpCode( "BIT 7,(IX?)"      , 20 ,  0 ), /* 7D */
+			new OpCode( "BIT 7,(IX?)"      , 20 ,  0 ), /* 7E */
+			new OpCode( "BIT 7,(IX?)"      , 20 ,  0 ), /* 7F */
+			new OpCode( "LD B,RES 0,(IX?)" , 23 ,  0 ), /* 80 */
+			new OpCode( "LD C,RES 0,(IX?)" , 23 ,  0 ), /* 81 */
+			new OpCode( "LD D,RES 0,(IX?)" , 23 ,  0 ), /* 82 */
+			new OpCode( "LD E,RES 0,(IX?)" , 23 ,  0 ), /* 83 */
+			new OpCode( "LD H,RES 0,(IX?)" , 23 ,  0 ), /* 84 */
+			new OpCode( "LD L,RES 0,(IX?)" , 23 ,  0 ), /* 85 */
+			new OpCode( "RES 0,(IX?)"      , 23 ,  0 ), /* 86 */
+			new OpCode( "LD A,RES 0,(IX?)" , 23 ,  0 ), /* 87 */
+			new OpCode( "LD B,RES 1,(IX?)" , 23 ,  0 ), /* 88 */
+			new OpCode( "LD C,RES 1,(IX?)" , 23 ,  0 ), /* 89 */
+			new OpCode( "LD D,RES 1,(IX?)" , 23 ,  0 ), /* 8A */
+			new OpCode( "LD E,RES 1,(IX?)" , 23 ,  0 ), /* 8B */
+			new OpCode( "LD H,RES 1,(IX?)" , 23 ,  0 ), /* 8C */
+			new OpCode( "LD L,RES 1,(IX?)" , 23 ,  0 ), /* 8D */
+			new OpCode( "RES 1,(IX?)"      , 23 ,  0 ), /* 8E */
+			new OpCode( "LD A,RES 1,(IX?)" , 23 ,  0 ), /* 8F */
+			new OpCode( "LD B,RES 2,(IX?)" , 23 ,  0 ), /* 90 */
+			new OpCode( "LD C,RES 2,(IX?)" , 23 ,  0 ), /* 91 */
+			new OpCode( "LD D,RES 2,(IX?)" , 23 ,  0 ), /* 92 */
+			new OpCode( "LD E,RES 2,(IX?)" , 23 ,  0 ), /* 93 */
+			new OpCode( "LD H,RES 2,(IX?)" , 23 ,  0 ), /* 94 */
+			new OpCode( "LD L,RES 2,(IX?)" , 23 ,  0 ), /* 95 */
+			new OpCode( "RES 2,(IX?)"      , 23 ,  0 ), /* 96 */
+			new OpCode( "LD A,RES 2,(IX?)" , 23 ,  0 ), /* 97 */
+			new OpCode( "LD B,RES 3,(IX?)" , 23 ,  0 ), /* 98 */
+			new OpCode( "LD C,RES 3,(IX?)" , 23 ,  0 ), /* 99 */
+			new OpCode( "LD D,RES 3,(IX?)" , 23 ,  0 ), /* 9A */
+			new OpCode( "LD E,RES 3,(IX?)" , 23 ,  0 ), /* 9B */
+			new OpCode( "LD H,RES 3,(IX?)" , 23 ,  0 ), /* 9C */
+			new OpCode( "LD L,RES 3,(IX?)" , 23 ,  0 ), /* 9D */
+			new OpCode( "RES 3,(IX?)"      , 23 ,  0 ), /* 9E */
+			new OpCode( "LD A,RES 3,(IX?)" , 23 ,  0 ), /* 9F */
+			new OpCode( "LD B,RES 4,(IX?)" , 23 ,  0 ), /* A0 */
+			new OpCode( "LD C,RES 4,(IX?)" , 23 ,  0 ), /* A1 */
+			new OpCode( "LD D,RES 4,(IX?)" , 23 ,  0 ), /* A2 */
+			new OpCode( "LD E,RES 4,(IX?)" , 23 ,  0 ), /* A3 */
+			new OpCode( "LD H,RES 4,(IX?)" , 23 ,  0 ), /* A4 */
+			new OpCode( "LD L,RES 4,(IX?)" , 23 ,  0 ), /* A5 */
+			new OpCode( "RES 4,(IX?)"      , 23 ,  0 ), /* A6 */
+			new OpCode( "LD A,RES 4,(IX?)" , 23 ,  0 ), /* A7 */
+			new OpCode( "LD B,RES 5,(IX?)" , 23 ,  0 ), /* A8 */
+			new OpCode( "LD C,RES 5,(IX?)" , 23 ,  0 ), /* A9 */
+			new OpCode( "LD D,RES 5,(IX?)" , 23 ,  0 ), /* AA */
+			new OpCode( "LD E,RES 5,(IX?)" , 23 ,  0 ), /* AB */
+			new OpCode( "LD H,RES 5,(IX?)" , 23 ,  0 ), /* AC */
+			new OpCode( "LD L,RES 5,(IX?)" , 23 ,  0 ), /* AD */
+			new OpCode( "RES 5,(IX?)"      , 23 ,  0 ), /* AE */
+			new OpCode( "LD A,RES 5,(IX?)" , 23 ,  0 ), /* AF */
+			new OpCode( "LD B,RES 6,(IX?)" , 23 ,  0 ), /* B0 */
+			new OpCode( "LD C,RES 6,(IX?)" , 23 ,  0 ), /* B1 */
+			new OpCode( "LD D,RES 6,(IX?)" , 23 ,  0 ), /* B2 */
+			new OpCode( "LD E,RES 6,(IX?)" , 23 ,  0 ), /* B3 */
+			new OpCode( "LD H,RES 6,(IX?)" , 23 ,  0 ), /* B4 */
+			new OpCode( "LD L,RES 6,(IX?)" , 23 ,  0 ), /* B5 */
+			new OpCode( "RES 6,(IX?)"      , 23 ,  0 ), /* B6 */
+			new OpCode( "LD A,RES 6,(IX?)" , 23 ,  0 ), /* B7 */
+			new OpCode( "LD B,RES 7,(IX?)" , 23 ,  0 ), /* B8 */
+			new OpCode( "LD C,RES 7,(IX?)" , 23 ,  0 ), /* B9 */
+			new OpCode( "LD D,RES 7,(IX?)" , 23 ,  0 ), /* BA */
+			new OpCode( "LD E,RES 7,(IX?)" , 23 ,  0 ), /* BB */
+			new OpCode( "LD H,RES 7,(IX?)" , 23 ,  0 ), /* BC */
+			new OpCode( "LD L,RES 7,(IX?)" , 23 ,  0 ), /* BD */
+			new OpCode( "RES 7,(IX?)"      , 23 ,  0 ), /* BE */
+			new OpCode( "LD A,RES 7,(IX?)" , 23 ,  0 ), /* BF */
+			new OpCode( "LD B,SET 0,(IX?)" , 23 ,  0 ), /* C0 */
+			new OpCode( "LD C,SET 0,(IX?)" , 23 ,  0 ), /* C1 */
+			new OpCode( "LD D,SET 0,(IX?)" , 23 ,  0 ), /* C2 */
+			new OpCode( "LD E,SET 0,(IX?)" , 23 ,  0 ), /* C3 */
+			new OpCode( "LD H,SET 0,(IX?)" , 23 ,  0 ), /* C4 */
+			new OpCode( "LD L,SET 0,(IX?)" , 23 ,  0 ), /* C5 */
+			new OpCode( "SET 0,(IX?)"      , 23 ,  0 ), /* C6 */
+			new OpCode( "LD A,SET 0,(IX?)" , 23 ,  0 ), /* C7 */
+			new OpCode( "LD B,SET 1,(IX?)" , 23 ,  0 ), /* C8 */
+			new OpCode( "LD C,SET 1,(IX?)" , 23 ,  0 ), /* C9 */
+			new OpCode( "LD D,SET 1,(IX?)" , 23 ,  0 ), /* CA */
+			new OpCode( "LD E,SET 1,(IX?)" , 23 ,  0 ), /* CB */
+			new OpCode( "LD H,SET 1,(IX?)" , 23 ,  0 ), /* CC */
+			new OpCode( "LD L,SET 1,(IX?)" , 23 ,  0 ), /* CD */
+			new OpCode( "SET 1,(IX?)"      , 23 ,  0 ), /* CE */
+			new OpCode( "LD A,SET 1,(IX?)" , 23 ,  0 ), /* CF */
+			new OpCode( "LD B,SET 2,(IX?)" , 23 ,  0 ), /* D0 */
+			new OpCode( "LD C,SET 2,(IX?)" , 23 ,  0 ), /* D1 */
+			new OpCode( "LD D,SET 2,(IX?)" , 23 ,  0 ), /* D2 */
+			new OpCode( "LD E,SET 2,(IX?)" , 23 ,  0 ), /* D3 */
+			new OpCode( "LD H,SET 2,(IX?)" , 23 ,  0 ), /* D4 */
+			new OpCode( "LD L,SET 2,(IX?)" , 23 ,  0 ), /* D5 */
+			new OpCode( "SET 2,(IX?)"      , 23 ,  0 ), /* D6 */
+			new OpCode( "LD A,SET 2,(IX?)" , 23 ,  0 ), /* D7 */
+			new OpCode( "LD B,SET 3,(IX?)" , 23 ,  0 ), /* D8 */
+			new OpCode( "LD C,SET 3,(IX?)" , 23 ,  0 ), /* D9 */
+			new OpCode( "LD D,SET 3,(IX?)" , 23 ,  0 ), /* DA */
+			new OpCode( "LD E,SET 3,(IX?)" , 23 ,  0 ), /* DB */
+			new OpCode( "LD H,SET 3,(IX?)" , 23 ,  0 ), /* DC */
+			new OpCode( "LD L,SET 3,(IX?)" , 23 ,  0 ), /* DD */
+			new OpCode( "SET 3,(IX?)"      , 23 ,  0 ), /* DE */
+			new OpCode( "LD A,SET 3,(IX?)" , 23 ,  0 ), /* DF */
+			new OpCode( "LD B,SET 4,(IX?)" , 23 ,  0 ), /* E0 */
+			new OpCode( "LD C,SET 4,(IX?)" , 23 ,  0 ), /* E1 */
+			new OpCode( "LD D,SET 4,(IX?)" , 23 ,  0 ), /* E2 */
+			new OpCode( "LD E,SET 4,(IX?)" , 23 ,  0 ), /* E3 */
+			new OpCode( "LD H,SET 4,(IX?)" , 23 ,  0 ), /* E4 */
+			new OpCode( "LD L,SET 4,(IX?)" , 23 ,  0 ), /* E5 */
+			new OpCode( "SET 4,(IX?)"      , 23 ,  0 ), /* E6 */
+			new OpCode( "LD A,SET 4,(IX?)" , 23 ,  0 ), /* E7 */
+			new OpCode( "LD B,SET 5,(IX?)" , 23 ,  0 ), /* E8 */
+			new OpCode( "LD C,SET 5,(IX?)" , 23 ,  0 ), /* E9 */
+			new OpCode( "LD D,SET 5,(IX?)" , 23 ,  0 ), /* EA */
+			new OpCode( "LD E,SET 5,(IX?)" , 23 ,  0 ), /* EB */
+			new OpCode( "LD H,SET 5,(IX?)" , 23 ,  0 ), /* EC */
+			new OpCode( "LD L,SET 5,(IX?)" , 23 ,  0 ), /* ED */
+			new OpCode( "SET 5,(IX?)"      , 23 ,  0 ), /* EE */
+			new OpCode( "LD A,SET 5,(IX?)" , 23 ,  0 ), /* EF */
+			new OpCode( "LD B,SET 6,(IX?)" , 23 ,  0 ), /* F0 */
+			new OpCode( "LD C,SET 6,(IX?)" , 23 ,  0 ), /* F1 */
+			new OpCode( "LD D,SET 6,(IX?)" , 23 ,  0 ), /* F2 */
+			new OpCode( "LD E,SET 6,(IX?)" , 23 ,  0 ), /* F3 */
+			new OpCode( "LD H,SET 6,(IX?)" , 23 ,  0 ), /* F4 */
+			new OpCode( "LD L,SET 6,(IX?)" , 23 ,  0 ), /* F5 */
+			new OpCode( "SET 6,(IX?)"      , 23 ,  0 ), /* F6 */
+			new OpCode( "LD A,SET 6,(IX?)" , 23 ,  0 ), /* F7 */
+			new OpCode( "LD B,SET 7,(IX?)" , 23 ,  0 ), /* F8 */
+			new OpCode( "LD C,SET 7,(IX?)" , 23 ,  0 ), /* F9 */
+			new OpCode( "LD D,SET 7,(IX?)" , 23 ,  0 ), /* FA */
+			new OpCode( "LD E,SET 7,(IX?)" , 23 ,  0 ), /* FB */
+			new OpCode( "LD H,SET 7,(IX?)" , 23 ,  0 ), /* FC */
+			new OpCode( "LD L,SET 7,(IX?)" , 23 ,  0 ), /* FD */
+			new OpCode( "SET 7,(IX?)"      , 23 ,  0 ), /* FE */
+			new OpCode( "LD A,SET 7,(IX?)" , 23 ,  0 ), /* FF */
 		};
 
         /**/
 
         public static OpCode[] dasm_fdcb = new OpCode[]
         {
-            new OpCode( "LD B,RLC (IY+?)"   , 23 ,  0 ), /* 00 */
-			new OpCode( "LD C,RLC (IY+?)"   , 23 ,  0 ), /* 01 */
-			new OpCode( "LD D,RLC (IY+?)"   , 23 ,  0 ), /* 02 */
-			new OpCode( "LD E,RLC (IY+?)"   , 23 ,  0 ), /* 03 */
-			new OpCode( "LD H,RLC (IY+?)"   , 23 ,  0 ), /* 04 */
-			new OpCode( "LD L,RLC (IY+?)"   , 23 ,  0 ), /* 05 */
-			new OpCode( "RLC (IY+?)"        , 23 ,  0 ), /* 06 */
-			new OpCode( "LD A,RLC (IY+?)"   , 23 ,  0 ), /* 07 */
-			new OpCode( "LD B,RRC (IY+?)"   , 23 ,  0 ), /* 08 */
-			new OpCode( "LD C,RRC (IY+?)"   , 23 ,  0 ), /* 09 */
-			new OpCode( "LD D,RRC (IY+?)"   , 23 ,  0 ), /* 0A */
-			new OpCode( "LD E,RRC (IY+?)"   , 23 ,  0 ), /* 0B */
-			new OpCode( "LD H,RRC (IY+?)"   , 23 ,  0 ), /* 0C */
-			new OpCode( "LD L,RRC (IY+?)"   , 23 ,  0 ), /* 0D */
-			new OpCode( "RRC (IY+?)"        , 23 ,  0 ), /* 0E */
-			new OpCode( "LD A,RRC (IY+?)"   , 23 ,  0 ), /* 0F */
-			new OpCode( "LD B,RL (IY+?)"    , 23 ,  0 ), /* 10 */
-			new OpCode( "LD C,RL (IY+?)"    , 23 ,  0 ), /* 11 */
-			new OpCode( "LD D,RL (IY+?)"    , 23 ,  0 ), /* 12 */
-			new OpCode( "LD E,RL (IY+?)"    , 23 ,  0 ), /* 13 */
-			new OpCode( "LD H,RL (IY+?)"    , 23 ,  0 ), /* 14 */
-			new OpCode( "LD L,RL (IY+?)"    , 23 ,  0 ), /* 15 */
-			new OpCode( "RL (IY+?)"         , 23 ,  0 ), /* 16 */
-			new OpCode( "LD A,RL (IY+?)"    , 23 ,  0 ), /* 17 */
-			new OpCode( "LD B,RR (IY+?)"    , 23 ,  0 ), /* 18 */
-			new OpCode( "LD C,RR (IY+?)"    , 23 ,  0 ), /* 19 */
-			new OpCode( "LD D,RR (IY+?)"    , 23 ,  0 ), /* 1A */
-			new OpCode( "LD E,RR (IY+?)"    , 23 ,  0 ), /* 1B */
-			new OpCode( "LD H,RR (IY+?)"    , 23 ,  0 ), /* 1C */
-			new OpCode( "LD L,RR (IY+?)"    , 23 ,  0 ), /* 1D */
-			new OpCode( "RR (IY+?)"         , 23 ,  0 ), /* 1E */
-			new OpCode( "LD A,RR (IY+?)"    , 23 ,  0 ), /* 1F */
-			new OpCode( "LD B,SLA (IY+?)"   , 23 ,  0 ), /* 20 */
-			new OpCode( "LD C,SLA (IY+?)"   , 23 ,  0 ), /* 21 */
-			new OpCode( "LD D,SLA (IY+?)"   , 23 ,  0 ), /* 22 */
-			new OpCode( "LD E,SLA (IY+?)"   , 23 ,  0 ), /* 23 */
-			new OpCode( "LD H,SLA (IY+?)"   , 23 ,  0 ), /* 24 */
-			new OpCode( "LD L,SLA (IY+?)"   , 23 ,  0 ), /* 25 */
-			new OpCode( "SLA (IY+?)"        , 23 ,  0 ), /* 26 */
-			new OpCode( "LD A,SLA (IY+?)"   , 23 ,  0 ), /* 27 */
-			new OpCode( "LD B,SRA (IY+?)"   , 23 ,  0 ), /* 28 */
-			new OpCode( "LD C,SRA (IY+?)"   , 23 ,  0 ), /* 29 */
-			new OpCode( "LD D,SRA (IY+?)"   , 23 ,  0 ), /* 2A */
-			new OpCode( "LD E,SRA (IY+?)"   , 23 ,  0 ), /* 2B */
-			new OpCode( "LD H,SRA (IY+?)"   , 23 ,  0 ), /* 2C */
-			new OpCode( "LD L,SRA (IY+?)"   , 23 ,  0 ), /* 2D */
-			new OpCode( "SRA (IY+?)"        , 23 ,  0 ), /* 2E */
-			new OpCode( "LD A,SRA (IY+?)"   , 23 ,  0 ), /* 2F */
-			new OpCode( "LD B,SLL (IY+?)"   , 23 ,  0 ), /* 30 */
-			new OpCode( "LD C,SLL (IY+?)"   , 23 ,  0 ), /* 31 */
-			new OpCode( "LD D,SLL (IY+?)"   , 23 ,  0 ), /* 32 */
-			new OpCode( "LD E,SLL (IY+?)"   , 23 ,  0 ), /* 33 */
-			new OpCode( "LD H,SLL (IY+?)"   , 23 ,  0 ), /* 34 */
-			new OpCode( "LD L,SLL (IY+?)"   , 23 ,  0 ), /* 35 */
-			new OpCode( "SLL (IY+?)"        , 23 ,  0 ), /* 36 */
-			new OpCode( "LD A,SLL (IY+?)"   , 23 ,  0 ), /* 37 */
-			new OpCode( "LD B,SRL (IY+?)"   , 23 ,  0 ), /* 38 */
-			new OpCode( "LD C,SRL (IY+?)"   , 23 ,  0 ), /* 39 */
-			new OpCode( "LD D,SRL (IY+?)"   , 23 ,  0 ), /* 3A */
-			new OpCode( "LD E,SRL (IY+?)"   , 23 ,  0 ), /* 3B */
-			new OpCode( "LD H,SRL (IY+?)"   , 23 ,  0 ), /* 3C */
-			new OpCode( "LD L,SRL (IY+?)"   , 23 ,  0 ), /* 3D */
-			new OpCode( "SRL (IY+?)"        , 23 ,  0 ), /* 3E */
-			new OpCode( "LD A,SRL (IY+?)"   , 23 ,  0 ), /* 3F */
-			new OpCode( "BIT 0,(IY+?)"      , 20 ,  0 ), /* 40 */
-			new OpCode( "BIT 0,(IY+?)"      , 20 ,  0 ), /* 41 */
-			new OpCode( "BIT 0,(IY+?)"      , 20 ,  0 ), /* 42 */
-			new OpCode( "BIT 0,(IY+?)"      , 20 ,  0 ), /* 43 */
-			new OpCode( "BIT 0,(IY+?)"      , 20 ,  0 ), /* 44 */
-			new OpCode( "BIT 0,(IY+?)"      , 20 ,  0 ), /* 45 */
-			new OpCode( "BIT 0,(IY+?)"      , 20 ,  0 ), /* 46 */
-			new OpCode( "BIT 0,(IY+?)"      , 20 ,  0 ), /* 47 */
-			new OpCode( "BIT 1,(IY+?)"      , 20 ,  0 ), /* 48 */
-			new OpCode( "BIT 1,(IY+?)"      , 20 ,  0 ), /* 49 */
-			new OpCode( "BIT 1,(IY+?)"      , 20 ,  0 ), /* 4A */
-			new OpCode( "BIT 1,(IY+?)"      , 20 ,  0 ), /* 4B */
-			new OpCode( "BIT 1,(IY+?)"      , 20 ,  0 ), /* 4C */
-			new OpCode( "BIT 1,(IY+?)"      , 20 ,  0 ), /* 4D */
-			new OpCode( "BIT 1,(IY+?)"      , 20 ,  0 ), /* 4E */
-			new OpCode( "BIT 1,(IY+?)"      , 20 ,  0 ), /* 4F */
-			new OpCode( "BIT 2,(IY+?)"      , 20 ,  0 ), /* 50 */
-			new OpCode( "BIT 2,(IY+?)"      , 20 ,  0 ), /* 51 */
-			new OpCode( "BIT 2,(IY+?)"      , 20 ,  0 ), /* 52 */
-			new OpCode( "BIT 2,(IY+?)"      , 20 ,  0 ), /* 53 */
-			new OpCode( "BIT 2,(IY+?)"      , 20 ,  0 ), /* 54 */
-			new OpCode( "BIT 2,(IY+?)"      , 20 ,  0 ), /* 55 */
-			new OpCode( "BIT 2,(IY+?)"      , 20 ,  0 ), /* 56 */
-			new OpCode( "BIT 2,(IY+?)"      , 20 ,  0 ), /* 57 */
-			new OpCode( "BIT 3,(IY+?)"      , 20 ,  0 ), /* 58 */
-			new OpCode( "BIT 3,(IY+?)"      , 20 ,  0 ), /* 59 */
-			new OpCode( "BIT 3,(IY+?)"      , 20 ,  0 ), /* 5A */
-			new OpCode( "BIT 3,(IY+?)"      , 20 ,  0 ), /* 5B */
-			new OpCode( "BIT 3,(IY+?)"      , 20 ,  0 ), /* 5C */
-			new OpCode( "BIT 3,(IY+?)"      , 20 ,  0 ), /* 5D */
-			new OpCode( "BIT 3,(IY+?)"      , 20 ,  0 ), /* 5E */
-			new OpCode( "BIT 3,(IY+?)"      , 20 ,  0 ), /* 5F */
-			new OpCode( "BIT 4,(IY+?)"      , 20 ,  0 ), /* 60 */
-			new OpCode( "BIT 4,(IY+?)"      , 20 ,  0 ), /* 61 */
-			new OpCode( "BIT 4,(IY+?)"      , 20 ,  0 ), /* 62 */
-			new OpCode( "BIT 4,(IY+?)"      , 20 ,  0 ), /* 63 */
-			new OpCode( "BIT 4,(IY+?)"      , 20 ,  0 ), /* 64 */
-			new OpCode( "BIT 4,(IY+?)"      , 20 ,  0 ), /* 65 */
-			new OpCode( "BIT 4,(IY+?)"      , 20 ,  0 ), /* 66 */
-			new OpCode( "BIT 4,(IY+?)"      , 20 ,  0 ), /* 67 */
-			new OpCode( "BIT 5,(IY+?)"      , 20 ,  0 ), /* 68 */
-			new OpCode( "BIT 5,(IY+?)"      , 20 ,  0 ), /* 69 */
-			new OpCode( "BIT 5,(IY+?)"      , 20 ,  0 ), /* 6A */
-			new OpCode( "BIT 5,(IY+?)"      , 20 ,  0 ), /* 6B */
-			new OpCode( "BIT 5,(IY+?)"      , 20 ,  0 ), /* 6C */
-			new OpCode( "BIT 5,(IY+?)"      , 20 ,  0 ), /* 6D */
-			new OpCode( "BIT 5,(IY+?)"      , 20 ,  0 ), /* 6E */
-			new OpCode( "BIT 5,(IY+?)"      , 20 ,  0 ), /* 6F */
-			new OpCode( "BIT 6,(IY+?)"      , 20 ,  0 ), /* 70 */
-			new OpCode( "BIT 6,(IY+?)"      , 20 ,  0 ), /* 71 */
-			new OpCode( "BIT 6,(IY+?)"      , 20 ,  0 ), /* 72 */
-			new OpCode( "BIT 6,(IY+?)"      , 20 ,  0 ), /* 73 */
-			new OpCode( "BIT 6,(IY+?)"      , 20 ,  0 ), /* 74 */
-			new OpCode( "BIT 6,(IY+?)"      , 20 ,  0 ), /* 75 */
-			new OpCode( "BIT 6,(IY+?)"      , 20 ,  0 ), /* 76 */
-			new OpCode( "BIT 6,(IY+?)"      , 20 ,  0 ), /* 77 */
-			new OpCode( "BIT 7,(IY+?)"      , 20 ,  0 ), /* 78 */
-			new OpCode( "BIT 7,(IY+?)"      , 20 ,  0 ), /* 79 */
-			new OpCode( "BIT 7,(IY+?)"      , 20 ,  0 ), /* 7A */
-			new OpCode( "BIT 7,(IY+?)"      , 20 ,  0 ), /* 7B */
-			new OpCode( "BIT 7,(IY+?)"      , 20 ,  0 ), /* 7C */
-			new OpCode( "BIT 7,(IY+?)"      , 20 ,  0 ), /* 7D */
-			new OpCode( "BIT 7,(IY+?)"      , 20 ,  0 ), /* 7E */
-			new OpCode( "BIT 7,(IY+?)"      , 20 ,  0 ), /* 7F */
-			new OpCode( "LD B,RES 0,(IY+?)" , 23 ,  0 ), /* 80 */
-			new OpCode( "LD C,RES 0,(IY+?)" , 23 ,  0 ), /* 81 */
-			new OpCode( "LD D,RES 0,(IY+?)" , 23 ,  0 ), /* 82 */
-			new OpCode( "LD E,RES 0,(IY+?)" , 23 ,  0 ), /* 83 */
-			new OpCode( "LD H,RES 0,(IY+?)" , 23 ,  0 ), /* 84 */
-			new OpCode( "LD L,RES 0,(IY+?)" , 23 ,  0 ), /* 85 */
-			new OpCode( "RES 0,(IY+?)"      , 23 ,  0 ), /* 86 */
-			new OpCode( "LD A,RES 0,(IY+?)" , 23 ,  0 ), /* 87 */
-			new OpCode( "LD B,RES 1,(IY+?)" , 23 ,  0 ), /* 88 */
-			new OpCode( "LD C,RES 1,(IY+?)" , 23 ,  0 ), /* 89 */
-			new OpCode( "LD D,RES 1,(IY+?)" , 23 ,  0 ), /* 8A */
-			new OpCode( "LD E,RES 1,(IY+?)" , 23 ,  0 ), /* 8B */
-			new OpCode( "LD H,RES 1,(IY+?)" , 23 ,  0 ), /* 8C */
-			new OpCode( "LD L,RES 1,(IY+?)" , 23 ,  0 ), /* 8D */
-			new OpCode( "RES 1,(IY+?)"      , 23 ,  0 ), /* 8E */
-			new OpCode( "LD A,RES 1,(IY+?)" , 23 ,  0 ), /* 8F */
-			new OpCode( "LD B,RES 2,(IY+?)" , 23 ,  0 ), /* 90 */
-			new OpCode( "LD C,RES 2,(IY+?)" , 23 ,  0 ), /* 91 */
-			new OpCode( "LD D,RES 2,(IY+?)" , 23 ,  0 ), /* 92 */
-			new OpCode( "LD E,RES 2,(IY+?)" , 23 ,  0 ), /* 93 */
-			new OpCode( "LD H,RES 2,(IY+?)" , 23 ,  0 ), /* 94 */
-			new OpCode( "LD L,RES 2,(IY+?)" , 23 ,  0 ), /* 95 */
-			new OpCode( "RES 2,(IY+?)"      , 23 ,  0 ), /* 96 */
-			new OpCode( "LD A,RES 2,(IY+?)" , 23 ,  0 ), /* 97 */
-			new OpCode( "LD B,RES 3,(IY+?)" , 23 ,  0 ), /* 98 */
-			new OpCode( "LD C,RES 3,(IY+?)" , 23 ,  0 ), /* 99 */
-			new OpCode( "LD D,RES 3,(IY+?)" , 23 ,  0 ), /* 9A */
-			new OpCode( "LD E,RES 3,(IY+?)" , 23 ,  0 ), /* 9B */
-			new OpCode( "LD H,RES 3,(IY+?)" , 23 ,  0 ), /* 9C */
-			new OpCode( "LD L,RES 3,(IY+?)" , 23 ,  0 ), /* 9D */
-			new OpCode( "RES 3,(IY+?)"      , 23 ,  0 ), /* 9E */
-			new OpCode( "LD A,RES 3,(IY+?)" , 23 ,  0 ), /* 9F */
-			new OpCode( "LD B,RES 4,(IY+?)" , 23 ,  0 ), /* A0 */
-			new OpCode( "LD C,RES 4,(IY+?)" , 23 ,  0 ), /* A1 */
-			new OpCode( "LD D,RES 4,(IY+?)" , 23 ,  0 ), /* A2 */
-			new OpCode( "LD E,RES 4,(IY+?)" , 23 ,  0 ), /* A3 */
-			new OpCode( "LD H,RES 4,(IY+?)" , 23 ,  0 ), /* A4 */
-			new OpCode( "LD L,RES 4,(IY+?)" , 23 ,  0 ), /* A5 */
-			new OpCode( "RES 4,(IY+?)"      , 23 ,  0 ), /* A6 */
-			new OpCode( "LD A,RES 4,(IY+?)" , 23 ,  0 ), /* A7 */
-			new OpCode( "LD B,RES 5,(IY+?)" , 23 ,  0 ), /* A8 */
-			new OpCode( "LD C,RES 5,(IY+?)" , 23 ,  0 ), /* A9 */
-			new OpCode( "LD D,RES 5,(IY+?)" , 23 ,  0 ), /* AA */
-			new OpCode( "LD E,RES 5,(IY+?)" , 23 ,  0 ), /* AB */
-			new OpCode( "LD H,RES 5,(IY+?)" , 23 ,  0 ), /* AC */
-			new OpCode( "LD L,RES 5,(IY+?)" , 23 ,  0 ), /* AD */
-			new OpCode( "RES 5,(IY+?)"      , 23 ,  0 ), /* AE */
-			new OpCode( "LD A,RES 5,(IY+?)" , 23 ,  0 ), /* AF */
-			new OpCode( "LD B,RES 6,(IY+?)" , 23 ,  0 ), /* B0 */
-			new OpCode( "LD C,RES 6,(IY+?)" , 23 ,  0 ), /* B1 */
-			new OpCode( "LD D,RES 6,(IY+?)" , 23 ,  0 ), /* B2 */
-			new OpCode( "LD E,RES 6,(IY+?)" , 23 ,  0 ), /* B3 */
-			new OpCode( "LD H,RES 6,(IY+?)" , 23 ,  0 ), /* B4 */
-			new OpCode( "LD L,RES 6,(IY+?)" , 23 ,  0 ), /* B5 */
-			new OpCode( "RES 6,(IY+?)"      , 23 ,  0 ), /* B6 */
-			new OpCode( "LD A,RES 6,(IY+?)" , 23 ,  0 ), /* B7 */
-			new OpCode( "LD B,RES 7,(IY+?)" , 23 ,  0 ), /* B8 */
-			new OpCode( "LD C,RES 7,(IY+?)" , 23 ,  0 ), /* B9 */
-			new OpCode( "LD D,RES 7,(IY+?)" , 23 ,  0 ), /* BA */
-			new OpCode( "LD E,RES 7,(IY+?)" , 23 ,  0 ), /* BB */
-			new OpCode( "LD H,RES 7,(IY+?)" , 23 ,  0 ), /* BC */
-			new OpCode( "LD L,RES 7,(IY+?)" , 23 ,  0 ), /* BD */
-			new OpCode( "RES 7,(IY+?)"      , 23 ,  0 ), /* BE */
-			new OpCode( "LD A,RES 7,(IY+?)" , 23 ,  0 ), /* BF */
-			new OpCode( "LD B,SET 0,(IY+?)" , 23 ,  0 ), /* C0 */
-			new OpCode( "LD C,SET 0,(IY+?)" , 23 ,  0 ), /* C1 */
-			new OpCode( "LD D,SET 0,(IY+?)" , 23 ,  0 ), /* C2 */
-			new OpCode( "LD E,SET 0,(IY+?)" , 23 ,  0 ), /* C3 */
-			new OpCode( "LD H,SET 0,(IY+?)" , 23 ,  0 ), /* C4 */
-			new OpCode( "LD L,SET 0,(IY+?)" , 23 ,  0 ), /* C5 */
-			new OpCode( "SET 0,(IY+?)"      , 23 ,  0 ), /* C6 */
-			new OpCode( "LD A,SET 0,(IY+?)" , 23 ,  0 ), /* C7 */
-			new OpCode( "LD B,SET 1,(IY+?)" , 23 ,  0 ), /* C8 */
-			new OpCode( "LD C,SET 1,(IY+?)" , 23 ,  0 ), /* C9 */
-			new OpCode( "LD D,SET 1,(IY+?)" , 23 ,  0 ), /* CA */
-			new OpCode( "LD E,SET 1,(IY+?)" , 23 ,  0 ), /* CB */
-			new OpCode( "LD H,SET 1,(IY+?)" , 23 ,  0 ), /* CC */
-			new OpCode( "LD L,SET 1,(IY+?)" , 23 ,  0 ), /* CD */
-			new OpCode( "SET 1,(IY+?)"      , 23 ,  0 ), /* CE */
-			new OpCode( "LD A,SET 1,(IY+?)" , 23 ,  0 ), /* CF */
-			new OpCode( "LD B,SET 2,(IY+?)" , 23 ,  0 ), /* D0 */
-			new OpCode( "LD C,SET 2,(IY+?)" , 23 ,  0 ), /* D1 */
-			new OpCode( "LD D,SET 2,(IY+?)" , 23 ,  0 ), /* D2 */
-			new OpCode( "LD E,SET 2,(IY+?)" , 23 ,  0 ), /* D3 */
-			new OpCode( "LD H,SET 2,(IY+?)" , 23 ,  0 ), /* D4 */
-			new OpCode( "LD L,SET 2,(IY+?)" , 23 ,  0 ), /* D5 */
-			new OpCode( "SET 2,(IY+?)"      , 23 ,  0 ), /* D6 */
-			new OpCode( "LD A,SET 2,(IY+?)" , 23 ,  0 ), /* D7 */
-			new OpCode( "LD B,SET 3,(IY+?)" , 23 ,  0 ), /* D8 */
-			new OpCode( "LD C,SET 3,(IY+?)" , 23 ,  0 ), /* D9 */
-			new OpCode( "LD D,SET 3,(IY+?)" , 23 ,  0 ), /* DA */
-			new OpCode( "LD E,SET 3,(IY+?)" , 23 ,  0 ), /* DB */
-			new OpCode( "LD H,SET 3,(IY+?)" , 23 ,  0 ), /* DC */
-			new OpCode( "LD L,SET 3,(IY+?)" , 23 ,  0 ), /* DD */
-			new OpCode( "SET 3,(IY+?)"      , 23 ,  0 ), /* DE */
-			new OpCode( "LD A,SET 3,(IY+?)" , 23 ,  0 ), /* DF */
-			new OpCode( "LD B,SET 4,(IY+?)" , 23 ,  0 ), /* E0 */
-			new OpCode( "LD C,SET 4,(IY+?)" , 23 ,  0 ), /* E1 */
-			new OpCode( "LD D,SET 4,(IY+?)" , 23 ,  0 ), /* E2 */
-			new OpCode( "LD E,SET 4,(IY+?)" , 23 ,  0 ), /* E3 */
-			new OpCode( "LD H,SET 4,(IY+?)" , 23 ,  0 ), /* E4 */
-			new OpCode( "LD L,SET 4,(IY+?)" , 23 ,  0 ), /* E5 */
-			new OpCode( "SET 4,(IY+?)"      , 23 ,  0 ), /* E6 */
-			new OpCode( "LD A,SET 4,(IY+?)" , 23 ,  0 ), /* E7 */
-			new OpCode( "LD B,SET 5,(IY+?)" , 23 ,  0 ), /* E8 */
-			new OpCode( "LD C,SET 5,(IY+?)" , 23 ,  0 ), /* E9 */
-			new OpCode( "LD D,SET 5,(IY+?)" , 23 ,  0 ), /* EA */
-			new OpCode( "LD E,SET 5,(IY+?)" , 23 ,  0 ), /* EB */
-			new OpCode( "LD H,SET 5,(IY+?)" , 23 ,  0 ), /* EC */
-			new OpCode( "LD L,SET 5,(IY+?)" , 23 ,  0 ), /* ED */
-			new OpCode( "SET 5,(IY+?)"      , 23 ,  0 ), /* EE */
-			new OpCode( "LD A,SET 5,(IY+?)" , 23 ,  0 ), /* EF */
-			new OpCode( "LD B,SET 6,(IY+?)" , 23 ,  0 ), /* F0 */
-			new OpCode( "LD C,SET 6,(IY+?)" , 23 ,  0 ), /* F1 */
-			new OpCode( "LD D,SET 6,(IY+?)" , 23 ,  0 ), /* F2 */
-			new OpCode( "LD E,SET 6,(IY+?)" , 23 ,  0 ), /* F3 */
-			new OpCode( "LD H,SET 6,(IY+?)" , 23 ,  0 ), /* F4 */
-			new OpCode( "LD L,SET 6,(IY+?)" , 23 ,  0 ), /* F5 */
-			new OpCode( "SET 6,(IY+?)"      , 23 ,  0 ), /* F6 */
-			new OpCode( "LD A,SET 6,(IY+?)" , 23 ,  0 ), /* F7 */
-			new OpCode( "LD B,SET 7,(IY+?)" , 23 ,  0 ), /* F8 */
-			new OpCode( "LD C,SET 7,(IY+?)" , 23 ,  0 ), /* F9 */
-			new OpCode( "LD D,SET 7,(IY+?)" , 23 ,  0 ), /* FA */
-			new OpCode( "LD E,SET 7,(IY+?)" , 23 ,  0 ), /* FB */
-			new OpCode( "LD H,SET 7,(IY+?)" , 23 ,  0 ), /* FC */
-			new OpCode( "LD L,SET 7,(IY+?)" , 23 ,  0 ), /* FD */
-			new OpCode( "SET 7,(IY+?)"      , 23 ,  0 ), /* FE */
-			new OpCode( "LD A,SET 7,(IY+?)" , 23 ,  0 ), /* FF */
+            new OpCode( "LD B,RLC (IY?)"   , 23 ,  0 ), /* 00 */
+			new OpCode( "LD C,RLC (IY?)"   , 23 ,  0 ), /* 01 */
+			new OpCode( "LD D,RLC (IY?)"   , 23 ,  0 ), /* 02 */
+			new OpCode( "LD E,RLC (IY?)"   , 23 ,  0 ), /* 03 */
+			new OpCode( "LD H,RLC (IY?)"   , 23 ,  0 ), /* 04 */
+			new OpCode( "LD L,RLC (IY?)"   , 23 ,  0 ), /* 05 */
+			new OpCode( "RLC (IY?)"        , 23 ,  0 ), /* 06 */
+			new OpCode( "LD A,RLC (IY?)"   , 23 ,  0 ), /* 07 */
+			new OpCode( "LD B,RRC (IY?)"   , 23 ,  0 ), /* 08 */
+			new OpCode( "LD C,RRC (IY?)"   , 23 ,  0 ), /* 09 */
+			new OpCode( "LD D,RRC (IY?)"   , 23 ,  0 ), /* 0A */
+			new OpCode( "LD E,RRC (IY?)"   , 23 ,  0 ), /* 0B */
+			new OpCode( "LD H,RRC (IY?)"   , 23 ,  0 ), /* 0C */
+			new OpCode( "LD L,RRC (IY?)"   , 23 ,  0 ), /* 0D */
+			new OpCode( "RRC (IY?)"        , 23 ,  0 ), /* 0E */
+			new OpCode( "LD A,RRC (IY?)"   , 23 ,  0 ), /* 0F */
+			new OpCode( "LD B,RL (IY?)"    , 23 ,  0 ), /* 10 */
+			new OpCode( "LD C,RL (IY?)"    , 23 ,  0 ), /* 11 */
+			new OpCode( "LD D,RL (IY?)"    , 23 ,  0 ), /* 12 */
+			new OpCode( "LD E,RL (IY?)"    , 23 ,  0 ), /* 13 */
+			new OpCode( "LD H,RL (IY?)"    , 23 ,  0 ), /* 14 */
+			new OpCode( "LD L,RL (IY?)"    , 23 ,  0 ), /* 15 */
+			new OpCode( "RL (IY?)"         , 23 ,  0 ), /* 16 */
+			new OpCode( "LD A,RL (IY?)"    , 23 ,  0 ), /* 17 */
+			new OpCode( "LD B,RR (IY?)"    , 23 ,  0 ), /* 18 */
+			new OpCode( "LD C,RR (IY?)"    , 23 ,  0 ), /* 19 */
+			new OpCode( "LD D,RR (IY?)"    , 23 ,  0 ), /* 1A */
+			new OpCode( "LD E,RR (IY?)"    , 23 ,  0 ), /* 1B */
+			new OpCode( "LD H,RR (IY?)"    , 23 ,  0 ), /* 1C */
+			new OpCode( "LD L,RR (IY?)"    , 23 ,  0 ), /* 1D */
+			new OpCode( "RR (IY?)"         , 23 ,  0 ), /* 1E */
+			new OpCode( "LD A,RR (IY?)"    , 23 ,  0 ), /* 1F */
+			new OpCode( "LD B,SLA (IY?)"   , 23 ,  0 ), /* 20 */
+			new OpCode( "LD C,SLA (IY?)"   , 23 ,  0 ), /* 21 */
+			new OpCode( "LD D,SLA (IY?)"   , 23 ,  0 ), /* 22 */
+			new OpCode( "LD E,SLA (IY?)"   , 23 ,  0 ), /* 23 */
+			new OpCode( "LD H,SLA (IY?)"   , 23 ,  0 ), /* 24 */
+			new OpCode( "LD L,SLA (IY?)"   , 23 ,  0 ), /* 25 */
+			new OpCode( "SLA (IY?)"        , 23 ,  0 ), /* 26 */
+			new OpCode( "LD A,SLA (IY?)"   , 23 ,  0 ), /* 27 */
+			new OpCode( "LD B,SRA (IY?)"   , 23 ,  0 ), /* 28 */
+			new OpCode( "LD C,SRA (IY?)"   , 23 ,  0 ), /* 29 */
+			new OpCode( "LD D,SRA (IY?)"   , 23 ,  0 ), /* 2A */
+			new OpCode( "LD E,SRA (IY?)"   , 23 ,  0 ), /* 2B */
+			new OpCode( "LD H,SRA (IY?)"   , 23 ,  0 ), /* 2C */
+			new OpCode( "LD L,SRA (IY?)"   , 23 ,  0 ), /* 2D */
+			new OpCode( "SRA (IY?)"        , 23 ,  0 ), /* 2E */
+			new OpCode( "LD A,SRA (IY?)"   , 23 ,  0 ), /* 2F */
+			new OpCode( "LD B,SLL (IY?)"   , 23 ,  0 ), /* 30 */
+			new OpCode( "LD C,SLL (IY?)"   , 23 ,  0 ), /* 31 */
+			new OpCode( "LD D,SLL (IY?)"   , 23 ,  0 ), /* 32 */
+			new OpCode( "LD E,SLL (IY?)"   , 23 ,  0 ), /* 33 */
+			new OpCode( "LD H,SLL (IY?)"   , 23 ,  0 ), /* 34 */
+			new OpCode( "LD L,SLL (IY?)"   , 23 ,  0 ), /* 35 */
+			new OpCode( "SLL (IY?)"        , 23 ,  0 ), /* 36 */
+			new OpCode( "LD A,SLL (IY?)"   , 23 ,  0 ), /* 37 */
+			new OpCode( "LD B,SRL (IY?)"   , 23 ,  0 ), /* 38 */
+			new OpCode( "LD C,SRL (IY?)"   , 23 ,  0 ), /* 39 */
+			new OpCode( "LD D,SRL (IY?)"   , 23 ,  0 ), /* 3A */
+			new OpCode( "LD E,SRL (IY?)"   , 23 ,  0 ), /* 3B */
+			new OpCode( "LD H,SRL (IY?)"   , 23 ,  0 ), /* 3C */
+			new OpCode( "LD L,SRL (IY?)"   , 23 ,  0 ), /* 3D */
+			new OpCode( "SRL (IY?)"        , 23 ,  0 ), /* 3E */
+			new OpCode( "LD A,SRL (IY?)"   , 23 ,  0 ), /* 3F */
+			new OpCode( "BIT 0,(IY?)"      , 20 ,  0 ), /* 40 */
+			new OpCode( "BIT 0,(IY?)"      , 20 ,  0 ), /* 41 */
+			new OpCode( "BIT 0,(IY?)"      , 20 ,  0 ), /* 42 */
+			new OpCode( "BIT 0,(IY?)"      , 20 ,  0 ), /* 43 */
+			new OpCode( "BIT 0,(IY?)"      , 20 ,  0 ), /* 44 */
+			new OpCode( "BIT 0,(IY?)"      , 20 ,  0 ), /* 45 */
+			new OpCode( "BIT 0,(IY?)"      , 20 ,  0 ), /* 46 */
+			new OpCode( "BIT 0,(IY?)"      , 20 ,  0 ), /* 47 */
+			new OpCode( "BIT 1,(IY?)"      , 20 ,  0 ), /* 48 */
+			new OpCode( "BIT 1,(IY?)"      , 20 ,  0 ), /* 49 */
+			new OpCode( "BIT 1,(IY?)"      , 20 ,  0 ), /* 4A */
+			new OpCode( "BIT 1,(IY?)"      , 20 ,  0 ), /* 4B */
+			new OpCode( "BIT 1,(IY?)"      , 20 ,  0 ), /* 4C */
+			new OpCode( "BIT 1,(IY?)"      , 20 ,  0 ), /* 4D */
+			new OpCode( "BIT 1,(IY?)"      , 20 ,  0 ), /* 4E */
+			new OpCode( "BIT 1,(IY?)"      , 20 ,  0 ), /* 4F */
+			new OpCode( "BIT 2,(IY?)"      , 20 ,  0 ), /* 50 */
+			new OpCode( "BIT 2,(IY?)"      , 20 ,  0 ), /* 51 */
+			new OpCode( "BIT 2,(IY?)"      , 20 ,  0 ), /* 52 */
+			new OpCode( "BIT 2,(IY?)"      , 20 ,  0 ), /* 53 */
+			new OpCode( "BIT 2,(IY?)"      , 20 ,  0 ), /* 54 */
+			new OpCode( "BIT 2,(IY?)"      , 20 ,  0 ), /* 55 */
+			new OpCode( "BIT 2,(IY?)"      , 20 ,  0 ), /* 56 */
+			new OpCode( "BIT 2,(IY?)"      , 20 ,  0 ), /* 57 */
+			new OpCode( "BIT 3,(IY?)"      , 20 ,  0 ), /* 58 */
+			new OpCode( "BIT 3,(IY?)"      , 20 ,  0 ), /* 59 */
+			new OpCode( "BIT 3,(IY?)"      , 20 ,  0 ), /* 5A */
+			new OpCode( "BIT 3,(IY?)"      , 20 ,  0 ), /* 5B */
+			new OpCode( "BIT 3,(IY?)"      , 20 ,  0 ), /* 5C */
+			new OpCode( "BIT 3,(IY?)"      , 20 ,  0 ), /* 5D */
+			new OpCode( "BIT 3,(IY?)"      , 20 ,  0 ), /* 5E */
+			new OpCode( "BIT 3,(IY?)"      , 20 ,  0 ), /* 5F */
+			new OpCode( "BIT 4,(IY?)"      , 20 ,  0 ), /* 60 */
+			new OpCode( "BIT 4,(IY?)"      , 20 ,  0 ), /* 61 */
+			new OpCode( "BIT 4,(IY?)"      , 20 ,  0 ), /* 62 */
+			new OpCode( "BIT 4,(IY?)"      , 20 ,  0 ), /* 63 */
+			new OpCode( "BIT 4,(IY?)"      , 20 ,  0 ), /* 64 */
+			new OpCode( "BIT 4,(IY?)"      , 20 ,  0 ), /* 65 */
+			new OpCode( "BIT 4,(IY?)"      , 20 ,  0 ), /* 66 */
+			new OpCode( "BIT 4,(IY?)"      , 20 ,  0 ), /* 67 */
+			new OpCode( "BIT 5,(IY?)"      , 20 ,  0 ), /* 68 */
+			new OpCode( "BIT 5,(IY?)"      , 20 ,  0 ), /* 69 */
+			new OpCode( "BIT 5,(IY?)"      , 20 ,  0 ), /* 6A */
+			new OpCode( "BIT 5,(IY?)"      , 20 ,  0 ), /* 6B */
+			new OpCode( "BIT 5,(IY?)"      , 20 ,  0 ), /* 6C */
+			new OpCode( "BIT 5,(IY?)"      , 20 ,  0 ), /* 6D */
+			new OpCode( "BIT 5,(IY?)"      , 20 ,  0 ), /* 6E */
+			new OpCode( "BIT 5,(IY?)"      , 20 ,  0 ), /* 6F */
+			new OpCode( "BIT 6,(IY?)"      , 20 ,  0 ), /* 70 */
+			new OpCode( "BIT 6,(IY?)"      , 20 ,  0 ), /* 71 */
+			new OpCode( "BIT 6,(IY?)"      , 20 ,  0 ), /* 72 */
+			new OpCode( "BIT 6,(IY?)"      , 20 ,  0 ), /* 73 */
+			new OpCode( "BIT 6,(IY?)"      , 20 ,  0 ), /* 74 */
+			new OpCode( "BIT 6,(IY?)"      , 20 ,  0 ), /* 75 */
+			new OpCode( "BIT 6,(IY?)"      , 20 ,  0 ), /* 76 */
+			new OpCode( "BIT 6,(IY?)"      , 20 ,  0 ), /* 77 */
+			new OpCode( "BIT 7,(IY?)"      , 20 ,  0 ), /* 78 */
+			new OpCode( "BIT 7,(IY?)"      , 20 ,  0 ), /* 79 */
+			new OpCode( "BIT 7,(IY?)"      , 20 ,  0 ), /* 7A */
+			new OpCode( "BIT 7,(IY?)"      , 20 ,  0 ), /* 7B */
+			new OpCode( "BIT 7,(IY?)"      , 20 ,  0 ), /* 7C */
+			new OpCode( "BIT 7,(IY?)"      , 20 ,  0 ), /* 7D */
+			new OpCode( "BIT 7,(IY?)"      , 20 ,  0 ), /* 7E */
+			new OpCode( "BIT 7,(IY?)"      , 20 ,  0 ), /* 7F */
+			new OpCode( "LD B,RES 0,(IY?)" , 23 ,  0 ), /* 80 */
+			new OpCode( "LD C,RES 0,(IY?)" , 23 ,  0 ), /* 81 */
+			new OpCode( "LD D,RES 0,(IY?)" , 23 ,  0 ), /* 82 */
+			new OpCode( "LD E,RES 0,(IY?)" , 23 ,  0 ), /* 83 */
+			new OpCode( "LD H,RES 0,(IY?)" , 23 ,  0 ), /* 84 */
+			new OpCode( "LD L,RES 0,(IY?)" , 23 ,  0 ), /* 85 */
+			new OpCode( "RES 0,(IY?)"      , 23 ,  0 ), /* 86 */
+			new OpCode( "LD A,RES 0,(IY?)" , 23 ,  0 ), /* 87 */
+			new OpCode( "LD B,RES 1,(IY?)" , 23 ,  0 ), /* 88 */
+			new OpCode( "LD C,RES 1,(IY?)" , 23 ,  0 ), /* 89 */
+			new OpCode( "LD D,RES 1,(IY?)" , 23 ,  0 ), /* 8A */
+			new OpCode( "LD E,RES 1,(IY?)" , 23 ,  0 ), /* 8B */
+			new OpCode( "LD H,RES 1,(IY?)" , 23 ,  0 ), /* 8C */
+			new OpCode( "LD L,RES 1,(IY?)" , 23 ,  0 ), /* 8D */
+			new OpCode( "RES 1,(IY?)"      , 23 ,  0 ), /* 8E */
+			new OpCode( "LD A,RES 1,(IY?)" , 23 ,  0 ), /* 8F */
+			new OpCode( "LD B,RES 2,(IY?)" , 23 ,  0 ), /* 90 */
+			new OpCode( "LD C,RES 2,(IY?)" , 23 ,  0 ), /* 91 */
+			new OpCode( "LD D,RES 2,(IY?)" , 23 ,  0 ), /* 92 */
+			new OpCode( "LD E,RES 2,(IY?)" , 23 ,  0 ), /* 93 */
+			new OpCode( "LD H,RES 2,(IY?)" , 23 ,  0 ), /* 94 */
+			new OpCode( "LD L,RES 2,(IY?)" , 23 ,  0 ), /* 95 */
+			new OpCode( "RES 2,(IY?)"      , 23 ,  0 ), /* 96 */
+			new OpCode( "LD A,RES 2,(IY?)" , 23 ,  0 ), /* 97 */
+			new OpCode( "LD B,RES 3,(IY?)" , 23 ,  0 ), /* 98 */
+			new OpCode( "LD C,RES 3,(IY?)" , 23 ,  0 ), /* 99 */
+			new OpCode( "LD D,RES 3,(IY?)" , 23 ,  0 ), /* 9A */
+			new OpCode( "LD E,RES 3,(IY?)" , 23 ,  0 ), /* 9B */
+			new OpCode( "LD H,RES 3,(IY?)" , 23 ,  0 ), /* 9C */
+			new OpCode( "LD L,RES 3,(IY?)" , 23 ,  0 ), /* 9D */
+			new OpCode( "RES 3,(IY?)"      , 23 ,  0 ), /* 9E */
+			new OpCode( "LD A,RES 3,(IY?)" , 23 ,  0 ), /* 9F */
+			new OpCode( "LD B,RES 4,(IY?)" , 23 ,  0 ), /* A0 */
+			new OpCode( "LD C,RES 4,(IY?)" , 23 ,  0 ), /* A1 */
+			new OpCode( "LD D,RES 4,(IY?)" , 23 ,  0 ), /* A2 */
+			new OpCode( "LD E,RES 4,(IY?)" , 23 ,  0 ), /* A3 */
+			new OpCode( "LD H,RES 4,(IY?)" , 23 ,  0 ), /* A4 */
+			new OpCode( "LD L,RES 4,(IY?)" , 23 ,  0 ), /* A5 */
+			new OpCode( "RES 4,(IY?)"      , 23 ,  0 ), /* A6 */
+			new OpCode( "LD A,RES 4,(IY?)" , 23 ,  0 ), /* A7 */
+			new OpCode( "LD B,RES 5,(IY?)" , 23 ,  0 ), /* A8 */
+			new OpCode( "LD C,RES 5,(IY?)" , 23 ,  0 ), /* A9 */
+			new OpCode( "LD D,RES 5,(IY?)" , 23 ,  0 ), /* AA */
+			new OpCode( "LD E,RES 5,(IY?)" , 23 ,  0 ), /* AB */
+			new OpCode( "LD H,RES 5,(IY?)" , 23 ,  0 ), /* AC */
+			new OpCode( "LD L,RES 5,(IY?)" , 23 ,  0 ), /* AD */
+			new OpCode( "RES 5,(IY?)"      , 23 ,  0 ), /* AE */
+			new OpCode( "LD A,RES 5,(IY?)" , 23 ,  0 ), /* AF */
+			new OpCode( "LD B,RES 6,(IY?)" , 23 ,  0 ), /* B0 */
+			new OpCode( "LD C,RES 6,(IY?)" , 23 ,  0 ), /* B1 */
+			new OpCode( "LD D,RES 6,(IY?)" , 23 ,  0 ), /* B2 */
+			new OpCode( "LD E,RES 6,(IY?)" , 23 ,  0 ), /* B3 */
+			new OpCode( "LD H,RES 6,(IY?)" , 23 ,  0 ), /* B4 */
+			new OpCode( "LD L,RES 6,(IY?)" , 23 ,  0 ), /* B5 */
+			new OpCode( "RES 6,(IY?)"      , 23 ,  0 ), /* B6 */
+			new OpCode( "LD A,RES 6,(IY?)" , 23 ,  0 ), /* B7 */
+			new OpCode( "LD B,RES 7,(IY?)" , 23 ,  0 ), /* B8 */
+			new OpCode( "LD C,RES 7,(IY?)" , 23 ,  0 ), /* B9 */
+			new OpCode( "LD D,RES 7,(IY?)" , 23 ,  0 ), /* BA */
+			new OpCode( "LD E,RES 7,(IY?)" , 23 ,  0 ), /* BB */
+			new OpCode( "LD H,RES 7,(IY?)" , 23 ,  0 ), /* BC */
+			new OpCode( "LD L,RES 7,(IY?)" , 23 ,  0 ), /* BD */
+			new OpCode( "RES 7,(IY?)"      , 23 ,  0 ), /* BE */
+			new OpCode( "LD A,RES 7,(IY?)" , 23 ,  0 ), /* BF */
+			new OpCode( "LD B,SET 0,(IY?)" , 23 ,  0 ), /* C0 */
+			new OpCode( "LD C,SET 0,(IY?)" , 23 ,  0 ), /* C1 */
+			new OpCode( "LD D,SET 0,(IY?)" , 23 ,  0 ), /* C2 */
+			new OpCode( "LD E,SET 0,(IY?)" , 23 ,  0 ), /* C3 */
+			new OpCode( "LD H,SET 0,(IY?)" , 23 ,  0 ), /* C4 */
+			new OpCode( "LD L,SET 0,(IY?)" , 23 ,  0 ), /* C5 */
+			new OpCode( "SET 0,(IY?)"      , 23 ,  0 ), /* C6 */
+			new OpCode( "LD A,SET 0,(IY?)" , 23 ,  0 ), /* C7 */
+			new OpCode( "LD B,SET 1,(IY?)" , 23 ,  0 ), /* C8 */
+			new OpCode( "LD C,SET 1,(IY?)" , 23 ,  0 ), /* C9 */
+			new OpCode( "LD D,SET 1,(IY?)" , 23 ,  0 ), /* CA */
+			new OpCode( "LD E,SET 1,(IY?)" , 23 ,  0 ), /* CB */
+			new OpCode( "LD H,SET 1,(IY?)" , 23 ,  0 ), /* CC */
+			new OpCode( "LD L,SET 1,(IY?)" , 23 ,  0 ), /* CD */
+			new OpCode( "SET 1,(IY?)"      , 23 ,  0 ), /* CE */
+			new OpCode( "LD A,SET 1,(IY?)" , 23 ,  0 ), /* CF */
+			new OpCode( "LD B,SET 2,(IY?)" , 23 ,  0 ), /* D0 */
+			new OpCode( "LD C,SET 2,(IY?)" , 23 ,  0 ), /* D1 */
+			new OpCode( "LD D,SET 2,(IY?)" , 23 ,  0 ), /* D2 */
+			new OpCode( "LD E,SET 2,(IY?)" , 23 ,  0 ), /* D3 */
+			new OpCode( "LD H,SET 2,(IY?)" , 23 ,  0 ), /* D4 */
+			new OpCode( "LD L,SET 2,(IY?)" , 23 ,  0 ), /* D5 */
+			new OpCode( "SET 2,(IY?)"      , 23 ,  0 ), /* D6 */
+			new OpCode( "LD A,SET 2,(IY?)" , 23 ,  0 ), /* D7 */
+			new OpCode( "LD B,SET 3,(IY?)" , 23 ,  0 ), /* D8 */
+			new OpCode( "LD C,SET 3,(IY?)" , 23 ,  0 ), /* D9 */
+			new OpCode( "LD D,SET 3,(IY?)" , 23 ,  0 ), /* DA */
+			new OpCode( "LD E,SET 3,(IY?)" , 23 ,  0 ), /* DB */
+			new OpCode( "LD H,SET 3,(IY?)" , 23 ,  0 ), /* DC */
+			new OpCode( "LD L,SET 3,(IY?)" , 23 ,  0 ), /* DD */
+			new OpCode( "SET 3,(IY?)"      , 23 ,  0 ), /* DE */
+			new OpCode( "LD A,SET 3,(IY?)" , 23 ,  0 ), /* DF */
+			new OpCode( "LD B,SET 4,(IY?)" , 23 ,  0 ), /* E0 */
+			new OpCode( "LD C,SET 4,(IY?)" , 23 ,  0 ), /* E1 */
+			new OpCode( "LD D,SET 4,(IY?)" , 23 ,  0 ), /* E2 */
+			new OpCode( "LD E,SET 4,(IY?)" , 23 ,  0 ), /* E3 */
+			new OpCode( "LD H,SET 4,(IY?)" , 23 ,  0 ), /* E4 */
+			new OpCode( "LD L,SET 4,(IY?)" , 23 ,  0 ), /* E5 */
+			new OpCode( "SET 4,(IY?)"      , 23 ,  0 ), /* E6 */
+			new OpCode( "LD A,SET 4,(IY?)" , 23 ,  0 ), /* E7 */
+			new OpCode( "LD B,SET 5,(IY?)" , 23 ,  0 ), /* E8 */
+			new OpCode( "LD C,SET 5,(IY?)" , 23 ,  0 ), /* E9 */
+			new OpCode( "LD D,SET 5,(IY?)" , 23 ,  0 ), /* EA */
+			new OpCode( "LD E,SET 5,(IY?)" , 23 ,  0 ), /* EB */
+			new OpCode( "LD H,SET 5,(IY?)" , 23 ,  0 ), /* EC */
+			new OpCode( "LD L,SET 5,(IY?)" , 23 ,  0 ), /* ED */
+			new OpCode( "SET 5,(IY?)"      , 23 ,  0 ), /* EE */
+			new OpCode( "LD A,SET 5,(IY?)" , 23 ,  0 ), /* EF */
+			new OpCode( "LD B,SET 6,(IY?)" , 23 ,  0 ), /* F0 */
+			new OpCode( "LD C,SET 6,(IY?)" , 23 ,  0 ), /* F1 */
+			new OpCode( "LD D,SET 6,(IY?)" , 23 ,  0 ), /* F2 */
+			new OpCode( "LD E,SET 6,(IY?)" , 23 ,  0 ), /* F3 */
+			new OpCode( "LD H,SET 6,(IY?)" , 23 ,  0 ), /* F4 */
+			new OpCode( "LD L,SET 6,(IY?)" , 23 ,  0 ), /* F5 */
+			new OpCode( "SET 6,(IY?)"      , 23 ,  0 ), /* F6 */
+			new OpCode( "LD A,SET 6,(IY?)" , 23 ,  0 ), /* F7 */
+			new OpCode( "LD B,SET 7,(IY?)" , 23 ,  0 ), /* F8 */
+			new OpCode( "LD C,SET 7,(IY?)" , 23 ,  0 ), /* F9 */
+			new OpCode( "LD D,SET 7,(IY?)" , 23 ,  0 ), /* FA */
+			new OpCode( "LD E,SET 7,(IY?)" , 23 ,  0 ), /* FB */
+			new OpCode( "LD H,SET 7,(IY?)" , 23 ,  0 ), /* FC */
+			new OpCode( "LD L,SET 7,(IY?)" , 23 ,  0 ), /* FD */
+			new OpCode( "SET 7,(IY?)"      , 23 ,  0 ), /* FE */
+			new OpCode( "LD A,SET 7,(IY?)" , 23 ,  0 ), /* FF */
 		};
     }
 }
