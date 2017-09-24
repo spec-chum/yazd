@@ -267,14 +267,19 @@ namespace yazd
 
             // Open input file
             var code = File.ReadAllBytes(_inputFile);
+            var codeLen = code.Length;
+
+            // code len seems to be +1, so deduct 1 if we hit 65536 which won't fit in ushort
+            if (codeLen - _header == 49152 || codeLen + _baseAddr == 65536)
+                codeLen--;
 
             // Work out the available address space
             _addrSpaceStart = _baseAddr;
-            _addrSpaceEnd = (ushort)(_baseAddr + (code.Length - _header));
+            _addrSpaceEnd = (ushort)(_baseAddr + (codeLen - _header));
 
             // Work out auto length
             if (_len == 0)
-                _len = (ushort)(code.Length - _header);
+                _len = (ushort)(codeLen - _header);
 
             // Check specified address range
             CheckAddress(_start);
