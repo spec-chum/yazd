@@ -84,9 +84,35 @@ namespace yazd
                     byte next = readByte();
                     if ((next | 0x20) == 0xFD || next == 0xED)
                     {
-                        i.Asm = "NOP*";
+                        // if no instruction fall back to base instruction and emit DB for the prefix
+                        if (Program.decMode)
+                        {
+                            if (opc == 0xDD)
+                            {
+                                i.Asm = LowerCase == true ? "db 221" : "DB 221";
+                            }
+                            else
+                            {
+                                i.Asm = LowerCase == true ? "db 253" : "DB 253";
+                            }
+                        }
+                        else
+                        {
+                            if (opc == 0xDD)
+                            {
+                                i.Asm = LowerCase == true ? "db $dd" : "DB $DD";
+                            }
+                            else
+                            {
+                                i.Asm = LowerCase == true ? "db $fd" : "DB $FD";
+                            }
+                        }
+
                         i.t_states = 4;
                         dasm = null;
+
+                        // process base instruction
+                        addr--;
                     }
                     else if (next == 0xCB)
                     {
@@ -101,9 +127,36 @@ namespace yazd
                         dasm = (opc == 0xDD) ? OpCodes.dasm_dd[next] : OpCodes.dasm_fd[next];
                         if (dasm.mnemonic == null) //mirrored instructions
                         {
-                            dasm = OpCodes.dasm_base[next];
+                            // if no instruction fall back to base instruction and emit DB for the prefix
+                            if (Program.decMode)
+                                if (Program.decMode)
+                            {
+                                if (opc == 0xDD)
+                                {
+                                    i.Asm = LowerCase == true ? "db 221" : "DB 221";
+                                }
+                                else
+                                {
+                                    i.Asm = LowerCase == true ? "db 253" : "DB 253";
+                                }
+                            }
+                            else
+                            {
+                                if (opc == 0xDD)
+                                {
+                                    i.Asm = LowerCase == true ? "db $dd" : "DB $DD";
+                                }
+                                else
+                                {
+                                    i.Asm = LowerCase == true ? "db $fd" : "DB $FD";
+                                }
+                            }
+
                             i.t_states = 4;
-                            i.t_states2 = 4;
+                            dasm = null;
+
+                            // process base instruction
+                            addr--;
                         }
                     }
                     break;
@@ -113,9 +166,21 @@ namespace yazd
                     dasm = OpCodes.dasm_ed[next];
                     if (dasm.mnemonic == null)
                     {
-                        i.Asm = "NOP*";
-                        i.t_states = 8;
+                        // if no instruction fall back to base instruction and emit DB for the prefix
+                        if (Program.decMode)
+                        {
+                            i.Asm = LowerCase == true ? "db 237" : "DB 237";
+                        }
+                        else
+                        {
+                            i.Asm = LowerCase == true ? "db $ed" : "DB $ED";
+                        }
+
+                        i.t_states = 4;
                         dasm = null;
+
+                        // process base instruction
+                        addr--;
                     }
                     break;
 
@@ -222,7 +287,7 @@ namespace yazd
                 i.t_states2 += dasm.t_states2;
 
                 // Return continue address
-                if ((dasm.flags & (OpCodeFlags.Continues)) != 0)
+                if ((dasm.flags & (OpCodeFlags.Continues | OpCodeFlags.Restarts)) != 0)
                     i.next_addr_1 = addr;
 
                 // Return jump target address (if have it)
