@@ -27,13 +27,13 @@ namespace yazd
             return r;
         }
 
-        public static ushort LabelledRangeLow = 0;
-        public static ushort LabelledRangeHigh = 0;
+        public static int LabelledRangeLow = 0;
+        public static int LabelledRangeHigh = 0;
         public static bool LowerCase = false;
         public static bool HtmlMode = false;
         public static bool ShowRelativeOffsets = false;
 
-        public static string FormatAddr(ushort addr, bool link = true, bool prefix = true)
+        public static string FormatAddr(int addr, bool link = true, bool prefix = true)
         {
             if (addr >= LabelledRangeLow && addr < LabelledRangeHigh)
             {
@@ -53,7 +53,7 @@ namespace yazd
                 }
             }
             else
-                return FormatWord(addr);
+                return FormatWord((ushort)addr);
         }
 
         public static Instruction Disassemble(byte[] buffer, ushort offsetInBuffer, ushort addr)

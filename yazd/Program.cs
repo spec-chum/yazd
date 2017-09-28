@@ -30,7 +30,7 @@ namespace yazd
 
         private void CheckAddress(int a)
         {
-            if (a < 0 || a > 0xFFFF)
+            if (a < 0 || a > 0x10000)
             {
                 if (decMode)
                     throw new InvalidOperationException(string.Format("Address {0} is out of range", a));
@@ -269,13 +269,10 @@ namespace yazd
             var code = File.ReadAllBytes(_inputFile);
             var codeLen = code.Length;
 
-            // code len seems to be +1, so deduct 1 if we hit 65536 which won't fit in ushort
-            if (codeLen - _header == 49152 || codeLen + _baseAddr == 65536)
-                codeLen--;
 
             // Work out the available address space
             _addrSpaceStart = _baseAddr;
-            _addrSpaceEnd = (ushort)(_baseAddr + (codeLen - _header));
+            _addrSpaceEnd = (_baseAddr + (codeLen - _header));
 
             // Work out auto length
             if (_len == 0)
@@ -288,8 +285,8 @@ namespace yazd
                 CheckAddress(addr);
 
             // Setup disassembler parameters
-            Disassembler.LabelledRangeLow = (ushort)_start;
-            Disassembler.LabelledRangeHigh = (ushort)(_start + _len);
+            Disassembler.LabelledRangeLow = _start;
+            Disassembler.LabelledRangeHigh = (_start + _len);
             Disassembler.LowerCase = _lowerCase;
             Disassembler.HtmlMode = _htmlMode;
             Disassembler.ShowRelativeOffsets = _reloffs;
