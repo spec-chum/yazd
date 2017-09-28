@@ -129,7 +129,6 @@ namespace yazd
                         {
                             // if no instruction fall back to base instruction and emit DB for the prefix
                             if (Program.decMode)
-                                if (Program.decMode)
                             {
                                 if (opc == 0xDD)
                                 {
