@@ -206,21 +206,16 @@ namespace yazd
                     {
                         case '@':
                             {
-                                byte hi, lo;
-
-                                // ZX Next push is big endian
-                                if (dasm.mnemonic == "PUSH @")
-                                {
-                                    hi = readByte();
-                                    lo = readByte();
-                                }
-                                else
-                                {
-                                    lo = readByte();
-                                    hi = readByte();
-                                }
+                                var lo = readByte();
+                                var hi = readByte();
 
                                 ushort val = (ushort)(lo + (hi * 0x100));
+
+                                // Next PUSH imm is Big Endian
+                                if(dasm.mnemonic == "PUSH @")
+                                {
+                                    val = (ushort)(val >> 8 | val << 8);
+                                }
 
                                 if ((dasm.flags & (OpCodeFlags.RefAddr | OpCodeFlags.Jumps)) != 0)
                                     sb.Append(FormatAddr(val));
