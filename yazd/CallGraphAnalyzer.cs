@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace yazd
@@ -25,7 +25,7 @@ namespace yazd
             }
 
             // Locate all CALL instructions and create procs for the target locations
-            foreach (var i in _sorted.Where(i => i.opCode != null && (i.opCode.flags & OpCodeFlags.Call) != 0))
+            foreach (var i in _sorted.Where(i => i.opCode != null && (i.opCode.flags & OpCodeFlags.Calls) != 0))
             {
                 if (i.next_addr_2.HasValue)
                 {

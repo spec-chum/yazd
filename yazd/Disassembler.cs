@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Net.Configuration;
 using System.Text;
 
 // Ported and modified from http://z80ex.sourceforge.net/
@@ -205,9 +206,21 @@ namespace yazd
                     {
                         case '@':
                             {
-                                var lo = readByte();
-                                var hi = readByte();
-                                ushort val = (ushort)(lo + hi * 0x100);
+                                byte hi, lo;
+
+                                // ZX Next push is big endian
+                                if (dasm.mnemonic == "PUSH @")
+                                {
+                                    hi = readByte();
+                                    lo = readByte();
+                                }
+                                else
+                                {
+                                    lo = readByte();
+                                    hi = readByte();
+                                }
+
+                                ushort val = (ushort)(lo + (hi * 0x100));
 
                                 if ((dasm.flags & (OpCodeFlags.RefAddr | OpCodeFlags.Jumps)) != 0)
                                     sb.Append(FormatAddr(val));

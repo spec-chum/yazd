@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 // Ported and modified from http://z80ex.sourceforge.net/
 
@@ -13,7 +13,7 @@ namespace yazd
         Restarts = 0x0008,  // Instruction jumps to restart address
         RefAddr = 0x0010,   // References a literal address
         PortRef = 0x0020,   // IN or OUT instruction
-        Call = 0x0040,
+        Calls = 0x0040,     // Instruction jumps and continues at the next address
         Next = 0x0080,      // ZX Spectrum Next extended instruction
     }
 
@@ -40,7 +40,7 @@ namespace yazd
                     this.flags |= OpCodeFlags.PortRef;
 
                 if (mnemonic.StartsWith("CALL ") || mnemonic.StartsWith("RST "))
-                    this.flags |= OpCodeFlags.Call;
+                    this.flags |= OpCodeFlags.Calls;
             }
         }
     }
@@ -607,36 +607,36 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 1D */
 			new OpCode( null                ,  0 ,  0 ), /* 1E */
 			new OpCode( null                ,  0 ,  0 ), /* 1F */
-			new OpCode( "LD A32,DEHL"       ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 20 */
-			new OpCode( "LD DEHL,A32"       ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 21 */
-			new OpCode( "EX A32,DEHL"       ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 22 */
-			new OpCode( "SWAPNIB"           ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 23 */
-			new OpCode( "MIRROR A"          ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 24 */
-			new OpCode( "LD HL,SP"          ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 25 */
-			new OpCode( "MIRROR DE"         ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 26 */
-			new OpCode( "TEST #"            ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 27 */
-			new OpCode( null                ,  0 ,  0 ), /* 28 */
-			new OpCode( null                ,  0 ,  0 ), /* 29 */
-			new OpCode( null                ,  0 ,  0 ), /* 2A */
-			new OpCode( null                ,  0 ,  0 ), /* 2B */
-			new OpCode( null                ,  0 ,  0 ), /* 2C */
+			new OpCode( null                ,  0 ,  0 ), /* 20 */
+			new OpCode( null                ,  0 ,  0 ), /* 21 */
+			new OpCode( null                ,  0 ,  0 ), /* 22 */
+			new OpCode( "SWAPNIB"           ,  8 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 23 */
+			new OpCode( "MIRROR A"          ,  8 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 24 */
+			new OpCode( null                ,  0 ,  0 ), /* 25 */
+			new OpCode( null                ,  0 ,  0 ), /* 26 */
+			new OpCode( "TEST #"            , 11 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 27 */
+			new OpCode( "BSLA DE,B"         ,  8 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 28 */
+            new OpCode( "BSRA DE,B"         ,  8 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 29 */
+            new OpCode( "BSRL DE,B"         ,  8 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 2A */
+            new OpCode( "BSRF DE,B"         ,  8 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 2B */
+            new OpCode( "BRLC DE,B"         ,  8 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 2C */
 			new OpCode( null                ,  0 ,  0 ), /* 2D */
 			new OpCode( null                ,  0 ,  0 ), /* 2E */
 			new OpCode( null                ,  0 ,  0 ), /* 2F */
-			new OpCode( "MUL"               ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 30 */
-			new OpCode( "ADD HL,A"          ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 31 */
-			new OpCode( "ADD DE,A"          ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 32 */
-			new OpCode( "ADD BC,A"          ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 33 */
-			new OpCode( "ADD HL,@"          ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 34 */
-			new OpCode( "ADD DE,@"          ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 35 */
-			new OpCode( "ADD BC,@"          ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 36 */
-			new OpCode( "INC DEHL"          ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 37 */
-			new OpCode( "DEC DEHL"          ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 38 */
-			new OpCode( "ADD DEHL,A"        ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 39 */
-			new OpCode( "ADD DEHL,BC"       ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 3A */
-			new OpCode( "ADD DEHL,@"        ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 3B */
-			new OpCode( "SUB DEHL,A"        ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 3C */
-			new OpCode( "SUB DEHL,BC"       ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 3D */
+			new OpCode( "MUL D,E"           ,  8 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 30 */
+			new OpCode( "ADD HL,A"          ,  8 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 31 */
+			new OpCode( "ADD DE,A"          ,  8 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 32 */
+			new OpCode( "ADD BC,A"          ,  8 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 33 */
+			new OpCode( "ADD HL,@"          , 16 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 34 */
+			new OpCode( "ADD DE,@"          , 16 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 35 */
+			new OpCode( "ADD BC,@"          , 16 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 36 */
+			new OpCode( null                ,  0 ,  0 ), /* 37 */
+			new OpCode( null                ,  0 ,  0 ), /* 38 */
+			new OpCode( null                ,  0 ,  0 ), /* 39 */
+			new OpCode( null                ,  0 ,  0 ), /* 3A */
+			new OpCode( null                ,  0 ,  0 ), /* 3B */
+			new OpCode( null                ,  0 ,  0 ), /* 3C */
+			new OpCode( null                ,  0 ,  0 ), /* 3D */
 			new OpCode( null                ,  0 ,  0 ), /* 3E */
 			new OpCode( null                ,  0 ,  0 ), /* 3F */
 			new OpCode( "IN B,(C)"          , 12 ,  0 ), /* 40 */
@@ -713,21 +713,21 @@ namespace yazd
 			new OpCode( null                ,  0 ,  0 ), /* 87 */
 			new OpCode( null                ,  0 ,  0 ), /* 88 */
 			new OpCode( null                ,  0 ,  0 ), /* 89 */
-			new OpCode( "PUSH @"            ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 8A */
-			new OpCode( "POPX"              ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 8B */
+			new OpCode( "PUSH @"            , 23 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 8A */
+			new OpCode( null                ,  0 ,  0 ), /* 8B */
 			new OpCode( null                ,  0 ,  0 ), /* 8C */
 			new OpCode( null                ,  0 ,  0 ), /* 8D */
 			new OpCode( null                ,  0 ,  0 ), /* 8E */
 			new OpCode( null                ,  0 ,  0 ), /* 8F */
-			new OpCode( "OUTINB"            ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 90 */
-			new OpCode( "NEXTREG #,#"       ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 91 */
-			new OpCode( "NEXTREG #,A"       ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 92 */
-			new OpCode( "PIXELDN"           ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 93 */
-			new OpCode( "PIXELAD"           ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 94 */
-			new OpCode( "SETAE"             ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 95 */
+			new OpCode( "OUTINB"            , 16 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 90 */
+			new OpCode( "NEXTREG #,#"       , 20 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 91 */
+			new OpCode( "NEXTREG #,A"       , 17 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 92 */
+			new OpCode( "PIXELDN"           ,  8 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 93 */
+			new OpCode( "PIXELAD"           ,  8 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 94 */
+			new OpCode( "SETAE"             ,  8 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* 95 */
 			new OpCode( null                ,  0 ,  0 ), /* 96 */
 			new OpCode( null                ,  0 ,  0 ), /* 97 */
-			new OpCode( null                ,  0 ,  0 ), /* 98 */
+			new OpCode( "JP (C)"            , 13 ,  0 , OpCodeFlags.Next | OpCodeFlags.Jumps), /* 98 */
 			new OpCode( null                ,  0 ,  0 ), /* 99 */
 			new OpCode( null                ,  0 ,  0 ), /* 9A */
 			new OpCode( null                ,  0 ,  0 ), /* 9B */
@@ -739,15 +739,15 @@ namespace yazd
 			new OpCode( "CPI"               , 16 ,  0 ), /* A1 */
 			new OpCode( "INI"               , 16 ,  0 ), /* A2 */
 			new OpCode( "OUTI"              , 16 ,  0 ), /* A3 */
-			new OpCode( "LDIX"              ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* A4 */
-			new OpCode( null                ,  0 ,  0 ), /* A5 */
+			new OpCode( "LDIX"              , 16 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* A4 */
+			new OpCode( "LDWS"              , 14 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* A5 */
 			new OpCode( null                ,  0 ,  0 ), /* A6 */
 			new OpCode( null                ,  0 ,  0 ), /* A7 */
 			new OpCode( "LDD"               , 16 ,  0 ), /* A8 */
 			new OpCode( "CPD"               , 16 ,  0 ), /* A9 */
 			new OpCode( "IND"               , 16 ,  0 ), /* AA */
 			new OpCode( "OUTD"              , 16 ,  0 ), /* AB */
-			new OpCode( "LDDX"              ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* AC */
+			new OpCode( "LDDX"              , 16 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* AC */
 			new OpCode( null                ,  0 ,  0 ), /* AD */
 			new OpCode( null                ,  0 ,  0 ), /* AE */
 			new OpCode( null                ,  0 ,  0 ), /* AF */
@@ -755,15 +755,15 @@ namespace yazd
 			new OpCode( "CPIR"              , 16 , 21 ), /* B1 */
 			new OpCode( "INIR"              , 16 , 21 ), /* B2 */
 			new OpCode( "OTIR"              , 16 , 21 ), /* B3 */
-			new OpCode( "LDIRX"             ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* B4 */
-			new OpCode( "FILLDE"            ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* B5 */
-			new OpCode( "LDIRSCALE"         ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* B6 */
-			new OpCode( "LDPIRX"            ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* B7 */
+			new OpCode( "LDIRX"             , 16 , 21 , OpCodeFlags.Next | OpCodeFlags.Continues), /* B4 */
+			new OpCode( null                ,  0 ,  0 ), /* B5 */
+			new OpCode( null                ,  0 ,  0 ), /* B6 */
+			new OpCode( "LDPIRX"            , 16 , 21 , OpCodeFlags.Next | OpCodeFlags.Continues), /* B7 */
 			new OpCode( "LDDR"              , 16 , 21 ), /* B8 */
 			new OpCode( "CPDR"              , 16 , 21 ), /* B9 */
 			new OpCode( "INDR"              , 16 , 21 ), /* BA */
 			new OpCode( "OTDR"              , 16 , 21 ), /* BB */
-			new OpCode( "LDDRX"             ,  4 ,  0 , OpCodeFlags.Next | OpCodeFlags.Continues), /* BC */
+			new OpCode( "LDDRX"             , 16 , 21 , OpCodeFlags.Next | OpCodeFlags.Continues), /* BC */
 			new OpCode( null                ,  0 ,  0 ), /* BD */
 			new OpCode( null                ,  0 ,  0 ), /* BE */
 			new OpCode( null                ,  0 ,  0 ), /* BF */
